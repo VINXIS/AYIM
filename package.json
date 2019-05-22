@@ -4,11 +4,20 @@
   "description": "The website for A Year In Mapping",
   "main": "",
   "scripts": {
-    "dev": "nuxt"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "nuxt": "^2.7.1"
+    "nuxt": "^2.7.1",
+    "vuetify": "^1.5.14",
+    "vuetify-loader": "^1.2.2"
+  },
+  "devDependencies": {
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
   }
 }
