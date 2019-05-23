@@ -1,18 +1,10 @@
 import NuxtConfiguration from "@nuxt/config"
-import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 
 const config: NuxtConfiguration = {
-    plugins: ['~/plugins/vuetify'],
+    plugins: ['~/plugins/vuetify.ts'],
     css: ['~/assets/style/app.styl'],
-    build: {
-        transpile: ['vuetify/lib'],
-        plugins: [new VuetifyLoaderPlugin()],
-        loaders: {
-          stylus: {
-            import: ['~assets/style/variables.styl']
-          }
-        },
-    }
+    vendor: ['~/plugins/vuetify.ts'],
+    extractCSS: true,
 }
 
 export default config
