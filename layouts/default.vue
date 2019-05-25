@@ -22,9 +22,39 @@
             </div>
         </div>
         <div class="nav">
+            <nuxt-link to="/standard" class="nav-mode standard">
+                <img src="/img/standard.png">
+                <div>standard</div>
+            </nuxt-link>
+            <nuxt-link to="/taiko" class="nav-mode taiko">
+                <img src="/img/taiko.png">
+                <div>taiko</div>
+            </nuxt-link>
+            <nuxt-link to="/fruits" class="nav-mode fruits">
+                <img src="/img/fruits.png">
+                <div>
+                    <div>catch</div>  
+                    <div>the beat</div> 
+                </div>  
+            </nuxt-link>
+            <nuxt-link to="/mania" class="nav-mode mania">
+                <img src="/img/mania.png">
+                <div>mania</div>
+            </nuxt-link>
+            <nuxt-link to="/storyboard" class="nav-mode storyboard">
+                <img src="/img/storyboard.png">
+                <div>storyboard</div>
+            </nuxt-link>
         </div>
         <nuxt class="nuxt"/>
         <div class="footer">
+            <div class="footer-left">
+                <img src="/img/corsace.png">
+                <img src="/img/corsace-text.png">
+            </div>
+            <div class="footer-right">
+                CHOOSE YOUR LANGUAGE:
+            </div>
         </div>
     </div>
 </template>

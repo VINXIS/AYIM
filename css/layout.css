@@ -5,7 +5,6 @@ body {
     margin-top: 1.6%;
     background: url(/img/background.png);
     background-color: #212121;
-    background-size: cover;
     background-repeat: no-repeat;
     font-family: 'ClearSans';
     font-size: 24px;
@@ -37,7 +36,9 @@ img {
     border-radius: 0 73.6px 73.6px 0;
     text-decoration: none;
     display: grid;
-    padding: 0 13px 1.5%;
+    grid-template-columns: 1fr 4fr;
+    grid-column-gap: 26px;
+    padding: 1% 13px;
     width: 33.3%;
     overflow: hidden;
     margin-right: auto;
@@ -46,14 +47,14 @@ img {
 .header2018 {
     grid-column: 1;
     grid-row: 1/4;
-    width: 80%;
     align-self: end;
+    padding-left: 10px;
 }
 
 .ayimicons {
     grid-column: 1/3;
     grid-row: 3/4;
-    left: -15%;
+    left: calc(-11px - 12%);;
     position: relative;
     max-width: 120%;
     align-self: end;
@@ -66,13 +67,11 @@ img {
 }
 
 .dividerheader {
-    width: 90%;
     align-self: end;
 }
 
 .countdown {
     font-weight: lighter;
-    font-size: 0.7916em;
     text-align: right;
     align-self: center;
     flex-direction: column;
@@ -107,6 +106,55 @@ img {
 
 .nav {
     grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    padding: 0 49px;
+    width: fit-content;
+}
+
+.nav-mode {
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    margin: 33px 0 0;
+    text-decoration: none;
+    color: inherit;
+    width: 99px;
+    overflow: hidden;
+    transition: 0.25s ease;
+}
+
+.nav-mode:hover {
+    width: 246px;
+}
+
+.nav-mode img {
+    padding: 16px;
+}
+
+.nav-mode div {
+    padding-right: 30px;
+    white-space: nowrap;
+}
+
+.standard {
+    background-color: #fb2475;
+}
+
+.taiko {
+    background-color: #ff890a;
+}
+
+.fruits {
+    background-color: #0abdff;
+}
+
+.mania {
+    background-color: #48f326;
+}
+
+.storyboard {
+    background-color: #555555;
 }
 
 .nuxt {
@@ -114,5 +162,15 @@ img {
 }
 
 .footer {
+    background-color: #2a2a2a;
     grid-area: footer;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    font-size: 22px;
+    color: #808080;
+    font-weight: lighter;
 }
