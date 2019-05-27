@@ -1,7 +1,26 @@
 <template>
     <div @click="active = !active" class="languageSelection">
         <div v-if="active" class="dropdown">
-            Lol
+            <div class="langSelDropdown">
+                <img src="https://osu.ppy.sh/images/flags/GB.png">
+                EN
+            </div>
+            <div class="langSelDropdown">
+                <img src="https://osu.ppy.sh/images/flags/GB.png">
+                EN
+            </div>
+            <div class="langSelDropdown">
+                <img src="https://osu.ppy.sh/images/flags/GB.png">
+                EN
+            </div>
+            <div class="langSelDropdown">
+                <img src="https://osu.ppy.sh/images/flags/GB.png">
+                EN
+            </div>
+            <div class="langSelDropdown">
+                <img src="https://osu.ppy.sh/images/flags/GB.png">
+                EN
+            </div>
         </div>
         <img src="https://osu.ppy.sh/images/flags/GB.png">
         EN
@@ -25,12 +44,28 @@ export default{
 }
 
 .languageSelection img {
-    width: 35px;
-    padding-right: 10px;
+    width: 1.8vw;
+    padding-right: 0.55vw;
 }
 
 .dropdown {
-    position: relative;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
     background-color: #ff890a;
+}
+
+.langSelDropdown {
+    padding: 0.65vw;
+    display: flex;
+    align-items: center;
+    color: white;
+    transition: 0.2s ease;
+}
+
+.langSelDropdown:hover {
+    color: #ff890a;
+    background-color: white;
+    transition: 0.2s ease;
 }
 </style>

@@ -6,6 +6,7 @@ body {
     background: url(/img/background.png);
     background-color: #212121;
     background-repeat: no-repeat;
+    background-size: 100% 175%;
     font-family: 'ClearSans';
     font-size: 24px;
     color: white;
@@ -76,6 +77,8 @@ img {
     align-self: center;
     flex-direction: column;
     padding: 0 26px;
+    font-size: calc(1vw + 3.25px);
+    white-space: nowrap;
 }
 
 .header-right {
@@ -116,10 +119,11 @@ img {
     border-radius: 50px;
     display: flex;
     align-items: center;
-    margin: 33px 0 0;
+    margin: calc(1.147vw + 11px) 0 0;
     text-decoration: none;
     color: inherit;
-    width: 99px;
+    width: calc(4.6vw + 11px);
+    height: calc(4.6vw + 11px);
     overflow: hidden;
     transition: 0.25s ease;
 }
@@ -130,6 +134,7 @@ img {
 
 .nav-mode img {
     padding: 16px;
+    height: calc(2.631vw + 16.5px);
 }
 
 .nav-mode div {
@@ -169,7 +174,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 22px;
+    font-size: calc(0.9vw + 5px);
     color: #808080;
     font-weight: lighter;
     width: 100%;
@@ -186,6 +191,16 @@ img {
     padding: 0 9.5px;
 }
 
+.corsace {
+    width: calc(1.925vw + 12px);
+}
+
+.corsaceText {
+    width: calc(4.76vw + 12px);
+}
+
 .footer-right {
     display: flex;
+    align-items: center;
+    text-align: right;
 }

@@ -49,8 +49,8 @@
         <nuxt class="nuxt"/>
         <div class="footer">
             <a href="https://corsace.io" class="footer-left">
-                <img src="/img/corsace.png">
-                <img src="/img/corsace-text.png">
+                <img class="corsace" src="/img/corsace.png">
+                <img class="corsaceText" src="/img/corsace-text.png">
             </a>
             <div class="footer-right">
                 CHOOSE YOUR LANGUAGE:
@@ -74,10 +74,4 @@ export default {
     }),
 }
 </script>
-
-<style>
-.mcahover-enter-active, .mcahover-leave-active {
-    transition: all .3s;
-}
-</style>
 
