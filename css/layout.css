@@ -75,7 +75,7 @@ img {
     text-align: right;
     align-self: center;
     flex-direction: column;
-    padding: 26px;
+    padding: 0 26px;
 }
 
 .header-right {
@@ -169,8 +169,23 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
     font-size: 22px;
     color: #808080;
     font-weight: lighter;
+    width: 100%;
+}
+
+.footer-left {
+    padding: 24px 23px;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.footer-left img {
+    padding: 0 9.5px;
+}
+
+.footer-right {
+    display: flex;
 }

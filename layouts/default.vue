@@ -48,12 +48,13 @@
         </div>
         <nuxt class="nuxt"/>
         <div class="footer">
-            <div class="footer-left">
+            <a href="https://corsace.io" class="footer-left">
                 <img src="/img/corsace.png">
                 <img src="/img/corsace-text.png">
-            </div>
+            </a>
             <div class="footer-right">
                 CHOOSE YOUR LANGUAGE:
+                <LanguageSelection/>
             </div>
         </div>
     </div>
@@ -61,10 +62,12 @@
 
 <script>
 import Countdown from '~/components/Countdown.vue'
+import LanguageSelection from '~/components/LanguageSelection.vue'
 
 export default {
     components: {
-        Countdown
+        Countdown,
+        LanguageSelection
     },
     data: () => ({
         mcaHover: false,
