@@ -29,9 +29,12 @@
 
 <script>
 export default{
-    data: () => ({
-        active: false,
-    })
+    data () {
+        return {
+            active: false,
+            lang: ""
+        }
+    },
 }
 </script>
 

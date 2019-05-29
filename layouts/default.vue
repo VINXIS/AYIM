@@ -18,7 +18,7 @@
             :class="{headerHover: mcaHover}"
             >
                 <img :class="{mcalogoHover: mcaHover}" src="/img/mca.png">
-                <img :class="{mcalogoHover: mcaHover}" src="/img/triangle.png">
+                <img :class="{mcalogoHover: mcaHover}" class="mcalogo" src="/img/triangle.png">
             </div>
         </div>
         <div class="nav">
@@ -69,9 +69,11 @@ export default {
         Countdown,
         LanguageSelection
     },
-    data: () => ({
-        mcaHover: false,
-    }),
+    data () {
+        return {
+            mcaHover: false,
+        }
+    },
 }
 </script>
 

@@ -107,6 +107,10 @@ img {
     transition: filter 0.25s;
 }
 
+.mcalogo {
+    width: 2vw;
+}
+
 .nav {
     grid-area: nav;
     display: flex;
@@ -116,30 +120,31 @@ img {
 }
 
 .nav-mode {
-    border-radius: 50px;
+    border-radius: 100vw;
     display: flex;
     align-items: center;
-    margin: calc(1.147vw + 11px) 0 0;
+    margin: calc(1.5vh + 14.7px) 0 0;
     text-decoration: none;
     color: inherit;
-    width: calc(4.6vw + 11px);
-    height: calc(4.6vw + 11px);
+    width: calc(3.5vw + 31.8px);
+    height: calc(3.5vw + 31.8px);
     overflow: hidden;
     transition: 0.25s ease;
 }
 
 .nav-mode:hover {
-    width: 246px;
+    width: calc(9vw + 67px);
 }
 
 .nav-mode img {
-    padding: 16px;
-    height: calc(2.631vw + 16.5px);
+    padding: calc(0.5vw + 6.5px);
+    width: calc(2.631vw + 16.5px);
 }
 
 .nav-mode div {
     padding-right: 30px;
     white-space: nowrap;
+    font-size: calc(1vw + 5px);
 }
 
 .standard {
@@ -169,7 +174,7 @@ img {
 .footer {
     background-color: #2a2a2a;
     grid-area: footer;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     display: flex;
     justify-content: space-between;
