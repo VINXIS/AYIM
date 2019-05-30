@@ -4,7 +4,7 @@ body {
     margin: 0;
     margin-top: 1.6%;
     background: url(/img/background.png);
-    background-color: #212121;
+    background-color: #141414;
     background-repeat: no-repeat;
     background-size: 100% 175%;
     font-family: 'ClearSans';
@@ -137,7 +137,7 @@ img {
 }
 
 .nav-mode img {
-    padding: calc(0.5vw + 6.5px);
+    padding: calc(0.4345vw + 7.65px);
     width: calc(2.631vw + 16.5px);
 }
 

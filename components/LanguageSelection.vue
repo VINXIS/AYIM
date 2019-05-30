@@ -42,7 +42,7 @@ export default{
 .languageSelection {
     display: flex;
     align-items: center;
-    padding: 0 13px;
+    padding: 0 calc(0.65vw + 4px);
     cursor: pointer;
 }
 
@@ -59,7 +59,7 @@ export default{
 }
 
 .langSelDropdown {
-    padding: 0.65vw;
+    padding: 0.65vw calc(0.65vw + 4px);
     display: flex;
     align-items: center;
     color: white;
