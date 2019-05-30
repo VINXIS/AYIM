@@ -2,10 +2,7 @@
     <div class="template-wrap">
         <div class="header">
             <nuxt-link to="/" class="header-left">
-                <img class="header2018" src="/img/2018.png">
-                <img class="ayimicons" src="/img/ayim-header-icons.png">
                 <img class="ayim" src="/img/ayim.png">
-                <img class="dividerheader" src="/img/divider.png">
             </nuxt-link>
             <div class="countdown">
                 <div>2018 MAPPER'S CHOICE AWARDS</div>
