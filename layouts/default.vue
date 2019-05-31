@@ -45,10 +45,23 @@
         </div>
         <nuxt class="nuxt"/>
         <div class="footer">
-            <a href="https://corsace.io" class="footer-left">
-                <img class="corsace" src="/img/corsace.png">
-                <img class="corsaceText" src="/img/corsace-text.png">
-            </a>
+            <div class="footer-left">
+                <a href="https://corsace.io" >
+                    <img class="corsace" src="/img/corsace.png">
+                    <img class="corsaceText" src="/img/corsace-text.png">
+                </a>
+                <div class="extLinks">
+                    <a href="https://twitter.com/corsace_">
+                        <img src="/img/discord.png">
+                    </a>
+                    <a href="https://discord.gg/Z6vEMsr">
+                        <img src="/img/discord.png">
+                    </a>
+                    <a href="https://www.twitch.tv/corsace">
+                        <img src="/img/twitch.png">
+                    </a>
+                </div>
+            </div>
             <div class="footer-right">
                 CHOOSE YOUR LANGUAGE:
                 <LanguageSelection/>

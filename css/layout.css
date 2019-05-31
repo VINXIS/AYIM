@@ -161,11 +161,14 @@ img {
 .footer-left {
     padding: 24px 23px;
     display: flex;
-    align-items: center;
-    margin-right: auto;
 }
 
-.footer-left img {
+.footer-left div, .footer-left a {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left div, .footer-left img {
     padding: 0 9.5px;
 }
 
@@ -175,6 +178,10 @@ img {
 
 .corsaceText {
     width: calc(4.76vw + 12px);
+}
+
+.extLinks img {
+    width: 2vw;
 }
 
 .footer-right {
