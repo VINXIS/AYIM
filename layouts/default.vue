@@ -52,7 +52,7 @@
                 </a>
                 <div class="extLinks">
                     <a href="https://twitter.com/corsace_">
-                        <img src="/img/discord.png">
+                        <img src="/img/twitter.png">
                     </a>
                     <a href="https://discord.gg/Z6vEMsr">
                         <img src="/img/discord.png">

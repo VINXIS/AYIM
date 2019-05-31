@@ -6,6 +6,7 @@ body {
     background: url(/img/background.png);
     background-color: #141414;
     background-repeat: no-repeat;
+    background-position: center;
     font-family: 'ClearSans';
     font-size: 24px;
     color: white;
@@ -190,7 +191,7 @@ img {
     text-align: right;
 }
 
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1920px) { /* To not break stuff at 2K 4K etc */
     body {
         background-size: cover;
     }
