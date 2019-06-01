@@ -1,0 +1,23 @@
+@import url("./font.css");
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.title img {
+    width: 25vw;
+}
+
+.title .bold {
+    font-size: calc(1.5vw + 6px);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.indexParagraph {
+    margin-left: 0.5vw;
+}

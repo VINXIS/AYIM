@@ -8,7 +8,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     font-family: 'ClearSans';
-    font-size: 24px;
+    font-size: calc(1vw + 6px);
     color: white;
 }
 
@@ -22,6 +22,7 @@ img {
         "header header header"
         "nav nuxt nuxt"
         "footer footer footer";
+    grid-template-columns: 15.21vw 84.79vw;
 }
 
 .header {
@@ -89,8 +90,10 @@ img {
     grid-area: nav;
     display: flex;
     flex-direction: column;
-    padding: 0 49px;
+    padding: 0 2.29vw;
     width: fit-content;
+    z-index: 100;
+    position: static;
 }
 
 .nav-mode {
@@ -143,6 +146,9 @@ img {
 
 .nuxt {
     grid-area: nuxt;
+    margin-top: 12vh;
+    position: static;
+    z-index: 0;
 }
 
 .footer {

@@ -5,9 +5,9 @@
                 <img class="ayim" src="/img/ayim.png">
             </nuxt-link>
             <div class="countdown">
-                <div>2018 MAPPER'S CHOICE AWARDS</div>
+                <div>{{ $t('ayim.layout.mca2018') }}</div>
                 <Countdown deadline="2020-12-25 00:00:00"></Countdown>
-                <div>DAYS TO VOTE</div>
+                <div>{{ $t('ayim.layout.days') }}</div>
             </div>
             <div class="header-right" 
             @mouseover="mcaHover=true"

@@ -1,29 +1,17 @@
 <template>
     <div @click="active = !active" class="languageSelection">
         <div v-if="active" class="dropdown">
-            <div class="langSelDropdown">
-                <img src="https://osu.ppy.sh/images/flags/GB.png">
-                EN
-            </div>
-            <div class="langSelDropdown">
-                <img src="https://osu.ppy.sh/images/flags/GB.png">
-                EN
-            </div>
-            <div class="langSelDropdown">
-                <img src="https://osu.ppy.sh/images/flags/GB.png">
-                EN
-            </div>
-            <div class="langSelDropdown">
-                <img src="https://osu.ppy.sh/images/flags/GB.png">
-                EN
-            </div>
-            <div class="langSelDropdown">
-                <img src="https://osu.ppy.sh/images/flags/GB.png">
-                EN
-            </div>
+            <nuxt-link 
+            class="langSelDropdown"
+            v-for="locale in $i18n.locales"
+            :key="locale.code"
+            :to="switchLocalePath(locale.code)">
+                <img :src="locale.flag">
+                {{ locale.code.toUpperCase() }}
+            </nuxt-link>
         </div>
-        <img src="https://osu.ppy.sh/images/flags/GB.png">
-        EN
+        <img :src="flag">
+        {{ this.$i18n.locale.toUpperCase() }}
     </div>
 </template>
 
@@ -35,6 +23,11 @@ export default{
             lang: ""
         }
     },
+    computed: {
+        flag () {
+            return this.$i18n.locales.filter(i => i.code === this.$i18n.locale)[0].flag
+        }
+    }
 }
 </script>
 
@@ -64,6 +57,7 @@ export default{
     align-items: center;
     color: white;
     transition: 0.2s ease;
+    text-decoration: none;
 }
 
 .langSelDropdown:hover {
