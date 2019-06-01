@@ -23,6 +23,9 @@ export default{
             lang: ""
         }
     },
+    created: async function() {
+        console.log(this.$i18n.locales)
+    },
     computed: {
         flag () {
             return this.$i18n.locales.filter(i => i.code === this.$i18n.locale)[0].flag

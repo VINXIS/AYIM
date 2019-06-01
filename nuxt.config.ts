@@ -22,6 +22,7 @@ const config: NuxtConfiguration = {
             detectBrowserLanguage: {
                 useCookie: true,
                 cookieKey: 'lang',
+                alwaysRedirect: true,
             },
             locales: [
                 {
@@ -62,8 +63,7 @@ const config: NuxtConfiguration = {
                 }
             ],
             lazy: true,
-            langDir: 'lang/',
-            parsePages: false,
+            langDir: 'CorsaceAssets/lang/',
         }],
     ]
 }

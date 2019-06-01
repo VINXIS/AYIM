@@ -2,7 +2,7 @@
     <div class="template-wrap">
         <div class="header">
             <nuxt-link to="/" class="header-left">
-                <img class="ayim" src="/img/ayim.png">
+                <img class="ayim" src="../CorsaceAssets/img/ayim.png">
             </nuxt-link>
             <div class="countdown">
                 <div>{{ $t('ayim.layout.mca2018') }}</div>
@@ -14,32 +14,32 @@
             @mouseout="mcaHover=false"
             :class="{headerHover: mcaHover}"
             >
-                <img :class="{mcalogoHover: mcaHover}" src="/img/mca.png">
-                <img :class="{mcalogoHover: mcaHover}" class="mcalogo" src="/img/triangle.png">
+                <img :class="{mcalogoHover: mcaHover}" src="../CorsaceAssets/img/mca.png">
+                <img :class="{mcalogoHover: mcaHover}" class="mcalogo" src="../CorsaceAssets/img/triangle.png">
             </div>
         </div>
         <div class="nav">
             <nuxt-link to="/standard" class="nav-mode standard">
-                <img src="/img/standard.png">
+                <img src="../CorsaceAssets/img/standard.png">
                 <div>standard</div>
             </nuxt-link>
             <nuxt-link to="/taiko" class="nav-mode taiko">
-                <img src="/img/taiko.png">
+                <img src="../CorsaceAssets/img/taiko.png">
                 <div>taiko</div>
             </nuxt-link>
             <nuxt-link to="/fruits" class="nav-mode fruits">
-                <img src="/img/fruits.png">
+                <img src="../CorsaceAssets/img/fruits.png">
                 <div>
                     <div>catch</div>  
                     <div>the beat</div> 
                 </div>  
             </nuxt-link>
             <nuxt-link to="/mania" class="nav-mode mania">
-                <img src="/img/mania.png">
+                <img src="../CorsaceAssets/img/mania.png">
                 <div>mania</div>
             </nuxt-link>
             <nuxt-link to="/storyboard" class="nav-mode storyboard">
-                <img src="/img/storyboard.png">
+                <img src="../CorsaceAssets/img/storyboard.png">
                 <div>storyboard</div>
             </nuxt-link>
         </div>
@@ -47,18 +47,18 @@
         <div class="footer">
             <div class="footer-left">
                 <a href="https://corsace.io" >
-                    <img class="corsace" src="/img/corsace.png">
-                    <img class="corsaceText" src="/img/corsace-text.png">
+                    <img class="corsace" src="../CorsaceAssets/img/corsace.png">
+                    <img class="corsaceText" src="../CorsaceAssets/img/corsace-text.png">
                 </a>
                 <div class="extLinks">
                     <a href="https://twitter.com/corsace_">
-                        <img src="/img/twitter.png">
+                        <img src="../CorsaceAssets/img/twitter.png">
                     </a>
                     <a href="https://discord.gg/Z6vEMsr">
-                        <img src="/img/discord.png">
+                        <img src="../CorsaceAssets/img/discord.png">
                     </a>
                     <a href="https://www.twitch.tv/corsace">
-                        <img src="/img/twitch.png">
+                        <img src="../CorsaceAssets/img/twitch.png">
                     </a>
                 </div>
             </div>
