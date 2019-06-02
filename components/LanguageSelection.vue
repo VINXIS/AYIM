@@ -1,16 +1,16 @@
 <template>
     <div @click="active = !active" class="languageSelection">
         <div v-if="active" class="dropdown">
-            <nuxt-link 
+            <div 
             class="langSelDropdown"
-            v-for="locale in $i18n.locales"
-            :key="locale.code"
-            :to="switchLocalePath(locale.code)">
-                <img :src="locale.flag">
-                {{ locale.code.toUpperCase() }}
-            </nuxt-link>
+            v-for="lang in langs"
+            :key="lang"
+            @click="$i18n.locale = lang; setLanguage(lang);">
+                <img :src="$i18n.messages[lang].flag">
+                {{ lang.toUpperCase() }}
+            </div>
         </div>
-        <img :src="flag">
+        <img :src="this.$i18n.messages[this.$i18n.locale].flag">
         {{ this.$i18n.locale.toUpperCase() }}
     </div>
 </template>
@@ -23,14 +23,20 @@ export default{
             lang: ""
         }
     },
-    created: async function() {
-        console.log(this.$i18n.locales)
+    methods: {
+        setLanguage: (lang) => {
+            localStorage.setItem('lang', lang);
+        },
+    },
+    created: function() {
+        console.log(this.$i18n.locale)
+        console.log(this.langs);
     },
     computed: {
-        flag () {
-            return this.$i18n.locales.filter(i => i.code === this.$i18n.locale)[0].flag
-        }
-    }
+        langs () {
+            return Object.keys(this.$i18n.messages)
+        },
+    },
 }
 </script>
 
@@ -60,7 +66,6 @@ export default{
     align-items: center;
     color: white;
     transition: 0.2s ease;
-    text-decoration: none;
 }
 
 .langSelDropdown:hover {

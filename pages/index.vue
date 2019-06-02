@@ -12,5 +12,10 @@
 
 <script>
 export default {
+    head () {
+        return {
+            title: "AYIM 2018",
+        }
+    }
 }
 </script>
