@@ -10,7 +10,7 @@
                 {{ lang.toUpperCase() }}
             </div>
         </div>
-        <img :src="this.$i18n.messages[this.$i18n.locale].flag">
+        <img :src="$i18n.messages[$i18n.locale].flag">
         {{ this.$i18n.locale.toUpperCase() }}
     </div>
 </template>

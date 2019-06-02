@@ -21,11 +21,11 @@
         <div class="nav">
             <nuxt-link to="/standard" class="nav-mode standard">
                 <img src="../CorsaceAssets/img/standard.png">
-                <div>standard</div>
+                <div>{{ $t('ayim.layout.nav.standard') }}</div>
             </nuxt-link>
             <nuxt-link to="/taiko" class="nav-mode taiko">
                 <img src="../CorsaceAssets/img/taiko.png">
-                <div>taiko</div>
+                <div>{{ $t('ayim.layout.nav.taiko') }}</div>
             </nuxt-link>
             <nuxt-link to="/fruits" class="nav-mode fruits">
                 <img src="../CorsaceAssets/img/fruits.png">
@@ -36,11 +36,11 @@
             </nuxt-link>
             <nuxt-link to="/mania" class="nav-mode mania">
                 <img src="../CorsaceAssets/img/mania.png">
-                <div>mania</div>
+                <div>{{ $t('ayim.layout.nav.mania') }}</div>
             </nuxt-link>
             <nuxt-link to="/storyboard" class="nav-mode storyboard">
                 <img src="../CorsaceAssets/img/storyboard.png">
-                <div>storyboard</div>
+                <div>{{ $t('ayim.layout.nav.storyboard') }}</div>
             </nuxt-link>
         </div>
         <nuxt class="nuxt"/>
