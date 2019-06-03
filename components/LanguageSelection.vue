@@ -1,6 +1,7 @@
 <template>
     <div @click="active = !active" class="languageSelection">
         <div v-if="active" class="dropdown">
+
             <div 
             class="langSelDropdown"
             v-for="lang in langs"
