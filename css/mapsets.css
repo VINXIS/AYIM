@@ -1,0 +1,132 @@
+.cards-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-gap: 20px;
+}
+
+.card__header {
+    background: transparent url('/rectangle-1-copy.png') no-repeat center;
+    background-size: cover;
+    margin-bottom: 15px;
+    border-left: 1px #fb2475 solid;
+    border-bottom: 1px #fb2475 solid;
+    height: calc(3vw + 6px);
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+}
+.card__header::before {
+    content: "";
+    background: transparent url('/layer-3.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    border-radius: 5px;
+    z-index: -1;
+}
+.card__header__content {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    height: 100%;
+}
+.card__header__content__dot {
+    padding: 5px;
+    margin-right: 15px;
+    background-color: #fb2475;
+}
+.card__header__content__title {
+    text-shadow: 0px 0px 4px #fff;
+}
+
+.card__body__content {
+    padding: 10px;
+    position: relative;
+    margin-bottom: 13px;
+    z-index: 1;
+}
+.card__body__content::before {
+    content: "";
+    background: #2a2a2a url('/delis.png') no-repeat center;
+    background-size: cover;
+    border-radius: 5px;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;  
+    z-index: -1;
+    opacity: .4;
+}
+.card__body__content--small {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.card__body__content__title {
+    font-weight: bold;
+    font-style: italic;
+    line-height: 1.11;
+    text-align: left;
+}
+.card__body__content__artist, .card__body__content__host {
+    line-height: 1.11;
+}
+.card__body__content__playcount {
+    font-size: calc(1vw + 1em);
+    text-align: right;
+    text-shadow: 0px 0px 4px #fff;
+}
+.card__body__content__playcount--small {
+    font-size: calc(1em);
+    text-shadow: 0px 0px 4px #fff;
+}
+
+/* Expanded */
+.card__header__content__arrow {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.8vw 1vw 0.8vw 0;
+    border-color: transparent #fb2475 transparent transparent;
+}
+.card__body__content__header {
+    padding: 0 10px;
+}
+.card__body__content--expanded {
+    margin-bottom: 8px!important;
+}
+.card__body__content--small > div {
+    flex: 1 1 20%;
+}
+.card__body__content--small > .card__body__content__title--small {
+    flex: 1 1 40%;
+}
+.card__body__content--small {
+    text-shadow: 0px 0px 4px #fff;
+}
+.card__body__content--small > .card__body__content__number {
+    flex: 0 1 4%;
+    font-size: calc(1vw + 1em);
+    font-weight: bold;
+}
+.card__body__content__playcount--small {
+    text-align: right;
+}
+
+/* stats */
+.card__body__content__stat-subtitle {
+    line-height: 1.1px;
+}
+.card__body__content__stat-title {
+    font-size: calc(1vw + 1.7em);
+}
+.card__body__content__stat-ammount {
+    font-size: calc(1vw + 1.5em);
+    text-align: right;
+    text-shadow: 0px 0px 4px #fff;
+}
