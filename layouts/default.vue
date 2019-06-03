@@ -29,9 +29,7 @@
             </nuxt-link>
             <nuxt-link to="/fruits" class="nav-mode fruits">
                 <img src="../CorsaceAssets/img/fruits.png">
-                <div>
-                    <div>catch</div>  
-                    <div>the beat</div> 
+                <div v-html="$t('ayim.layout.nav.fruits')">
                 </div>  
             </nuxt-link>
             <nuxt-link to="/mania" class="nav-mode mania">

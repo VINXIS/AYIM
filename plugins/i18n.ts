@@ -15,6 +15,7 @@ export default ({ app }) => {
             'en': require('../CorsaceAssets/lang/en.json'), 
             'id': require('../CorsaceAssets/lang/id.json'),
             'kr': require('../CorsaceAssets/lang/kr.json'),
+            'de': require('../CorsaceAssets/lang/de.json'),
         }
     })
 }
