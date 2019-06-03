@@ -5,7 +5,7 @@ const config: NuxtConfiguration = {
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { name: 'keywords', content: 'osu, Corsace, mapping, osu!,rhythm game, ' },
+            { name: 'keywords', content: 'osu, osu!, Corsace, map, mapping, rhythm game, charting, charts, beatmaps, beatmapping, beatmap' },
         ]
     },
     css: [
