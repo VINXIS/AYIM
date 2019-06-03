@@ -62,7 +62,9 @@
             </div>
             <div class="footer-right">
                 CHOOSE YOUR LANGUAGE:
-                <LanguageSelection/>
+                <no-ssr>
+                    <LanguageSelection/>
+                </no-ssr>
             </div>
         </div>
     </div>

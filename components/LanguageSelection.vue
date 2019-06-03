@@ -11,7 +11,7 @@
             </div>
         </div>
         <img :src="$i18n.messages[$i18n.locale].flag">
-        {{ this.$i18n.locale.toUpperCase() }}
+        {{ $i18n.locale.toUpperCase() }}
     </div>
 </template>
 
@@ -19,8 +19,7 @@
 export default{
     data () {
         return {
-            active: false,
-            lang: ""
+            active: false
         }
     },
     methods: {
@@ -28,9 +27,8 @@ export default{
             localStorage.setItem('lang', lang);
         },
     },
-    created: function() {
-        console.log(this.$i18n.locale)
-        console.log(this.langs);
+    created() {
+        console.log(this.$i18n.locale.toUpperCase())
     },
     computed: {
         langs () {
