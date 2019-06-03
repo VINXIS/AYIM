@@ -1,35 +1,35 @@
 @font-face {
     font-family: "ClearSans";
-    src: url("../assets/fonts/ClearSans-Regular.ttf");
+    src: url("../CorsaceAssets/fonts/ClearSans-Regular.ttf");
 }
 
 @font-face {
     font-family: "ClearSans";
-    src: url("../assets/fonts/ClearSans-Light.ttf");
+    src: url("../CorsaceAssets/fonts/ClearSans-Light.ttf");
     font-weight: lighter;
 }
 
 @font-face {
     font-family: "ClearSans";
-    src: url("../assets/fonts/ClearSans-Italic.ttf");
+    src: url("../CorsaceAssets/fonts/ClearSans-Italic.ttf");
     font-style: italic;
 }
 
 @font-face {
     font-family: "ClearSans";
-    src: url("../assets/fonts/ClearSans-Bold.ttf");
+    src: url("../CorsaceAssets/fonts/ClearSans-Bold.ttf");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "ClearSans";
-    src: url("../assets/fonts/ClearSans-BoldItalic.ttf");
+    src: url("../CorsaceAssets/fonts/ClearSans-BoldItalic.ttf");
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: "ClearSans Thin";
-    src: url("../assets/fonts/ClearSans-Thin.ttf");
+    src: url("../CorsaceAssets/fonts/ClearSans-Thin.ttf");
     font-weight: 100;
 }
