@@ -35,7 +35,6 @@ img {
 
 .header-left {
     overflow: hidden;
-    margin-right: auto;
     display: flex;
     align-items: center;
 }
@@ -54,6 +53,7 @@ img {
     padding: 0 26px;
     font-size: calc(1vw + 3.25px);
     white-space: nowrap;
+    margin-left: auto;
 }
 
 .header-right {
@@ -84,64 +84,6 @@ img {
 
 .mcalogo {
     width: 2vw;
-}
-
-.nav {
-    grid-area: nav;
-    display: flex;
-    flex-direction: column;
-    padding: 0 2.29vw;
-    width: fit-content;
-    z-index: 100;
-    position: static;
-}
-
-.nav-mode {
-    border-radius: 100vw;
-    display: flex;
-    align-items: center;
-    margin: calc(1.5vh + 14.7px) 0 0;
-    text-decoration: none;
-    color: inherit;
-    width: calc(3.5vw + 31.8px);
-    height: calc(3.5vw + 31.8px);
-    overflow: hidden;
-    transition: 0.25s ease;
-}
-
-.nav-mode:hover {
-    width: calc(9vw + 67px);
-}
-
-.nav-mode img {
-    padding: calc(0.4345vw + 7.65px);
-    width: calc(2.631vw + 16.5px);
-}
-
-.nav-mode div {
-    padding-right: 30px;
-    white-space: nowrap;
-    font-size: calc(1vw + 5px);
-}
-
-.standard {
-    background-color: #fb2475;
-}
-
-.taiko {
-    background-color: #ff890a;
-}
-
-.fruits {
-    background-color: #0abdff;
-}
-
-.mania {
-    background-color: #48f326;
-}
-
-.storyboard {
-    background-color: #555555;
 }
 
 .nuxt {

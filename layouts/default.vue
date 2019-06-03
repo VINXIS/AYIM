@@ -18,29 +18,7 @@
                 <img :class="{mcalogoHover: mcaHover}" class="mcalogo" src="../CorsaceAssets/img/triangle.png">
             </div>
         </div>
-        <div class="nav">
-            <nuxt-link to="/standard" class="nav-mode standard">
-                <img src="../CorsaceAssets/img/standard.png">
-                <div>{{ $t('ayim.layout.nav.standard') }}</div>
-            </nuxt-link>
-            <nuxt-link to="/taiko" class="nav-mode taiko">
-                <img src="../CorsaceAssets/img/taiko.png">
-                <div>{{ $t('ayim.layout.nav.taiko') }}</div>
-            </nuxt-link>
-            <nuxt-link to="/fruits" class="nav-mode fruits">
-                <img src="../CorsaceAssets/img/fruits.png">
-                <div v-html="$t('ayim.layout.nav.fruits')">
-                </div>  
-            </nuxt-link>
-            <nuxt-link to="/mania" class="nav-mode mania">
-                <img src="../CorsaceAssets/img/mania.png">
-                <div>{{ $t('ayim.layout.nav.mania') }}</div>
-            </nuxt-link>
-            <nuxt-link to="/storyboard" class="nav-mode storyboard">
-                <img src="../CorsaceAssets/img/storyboard.png">
-                <div>{{ $t('ayim.layout.nav.storyboard') }}</div>
-            </nuxt-link>
-        </div>
+        <ModeNavigation/>
         <nuxt class="nuxt"/>
         <div class="footer">
             <div class="footer-left">
@@ -73,11 +51,13 @@
 <script>
 import Countdown from '~/components/Countdown.vue'
 import LanguageSelection from '~/components/LanguageSelection.vue'
+import ModeNavigation from '~/components/ModeNavigation.vue'
 
 export default {
     components: {
         Countdown,
-        LanguageSelection
+        LanguageSelection,
+        ModeNavigation,
     },
     data () {
         return {
