@@ -110,7 +110,7 @@ img {
 }
 
 .footer-left {
-    padding: 24px 23px;
+    padding: calc(1vh + 6px) 23px;
     display: flex;
 }
 

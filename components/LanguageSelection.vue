@@ -49,10 +49,12 @@ export default{
 
 .languageSelection img {
     width: 1.8vw;
-    padding-right: 0.55vw;
+    margin-right: 0.55vw;
 }
 
 .dropdown {
+    border-top-left-radius: 8px;
+    padding-top: calc(0.4vw + 3px);
     position: absolute;
     bottom: 100%;
     right: 0;
@@ -67,9 +69,18 @@ export default{
     transition: 0.2s ease;
 }
 
+.langSelDropdown img {
+    border: 2px solid white;
+    border-radius: 7px;
+}
+
 .langSelDropdown:hover {
     color: #ff890a;
     background-color: white;
     transition: 0.2s ease;
+}
+
+.langSelDropdown:hover img{
+    border: 2px solid black;
 }
 </style>
