@@ -1,35 +1,26 @@
 <template>
-    <div class="cards-layout" v-if="!isExpanded">
-        <div v-for="n in 9" :key="n" class="card">
+    <div class="cards-layout" v-if="stats">
+        <div v-for="stat in stats" :key="stat.name" class="card">
             <div class="card__header">
-                <div class="card__header__content"
-                    @click="isExpanded = !isExpanded"
-                >
+                <div class="card__header__content">
                     <div class="card__header__content__dot"></div>
-                    <div class="card__header__content__title">APPROACH RATE</div>
+                    <div class="card__header__content__title">{{ stat.name }}</div>
                 </div>
             </div>
             <div class="card__body">
-                <div class="card__body__content">
+                <div 
+                    class="card__body__content"
+                    v-for="definition in stat.definitions" 
+                    :key="definition.id"
+                >
                     <div class="card__body__content__stat-subtitle">
-                        Number of maps with
+                        {{ definition.subtitle }}
                     </div>
                     <div class="card__body__content__stat-title">
-                        AR10
+                        {{ definition.title }}
                     </div>
                     <div class="card__body__content__stat-ammount">
-                        23
-                    </div>
-                </div>
-                <div class="card__body__content">
-                    <div class="card__body__content__stat-subtitle">
-                        Number of maps with
-                    </div>
-                    <div class="card__body__content__stat-title">
-                        AR10
-                    </div>
-                    <div class="card__body__content__stat-ammount">
-                        23
+                        {{ definition.value }}
                     </div>
                 </div>
             </div>
@@ -38,7 +29,23 @@
 </template>
 
 <script>
-export default {
+import axios from 'axios';
 
+export default {
+    props: {
+        mode: String,
+    },
+    data () {
+        return {
+            stats: null,
+        }
+    },
+    async mounted () {
+        try {
+            this.stats = (await axios.get(`/files/${this.mode}_stats.json`)).data;
+        } catch (error) {
+            console.log(error);
+        }
+    },
 }
 </script>

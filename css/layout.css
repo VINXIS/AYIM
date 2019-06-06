@@ -22,7 +22,7 @@ img {
         "header header header"
         "nav nuxt nuxt"
         "footer footer footer";
-    grid-template-columns: 15.21vw 84.79vw;
+    grid-template-columns: 15.21vw 1fr;
 }
 
 .header {

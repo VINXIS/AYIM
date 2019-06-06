@@ -1,17 +1,17 @@
 <template>
 <div>
     <div class="mode-nav">
-        <div class="mode-nav__title">osu<span style="color:#fb2475;">!standard</span></div>
+        <div class="mode-nav__title">osu<span style="color:#fb2475;">!{{ mode }}</span></div>
         <div class="mode-nav__menu">
-            <button class="btn btn--pink">mapsets</button>
-            <button class="btn btn--white">mappers</button>
-            <button class="btn btn--black">comments</button>
+            <nuxt-link :to="`/${mode}/`" class="btn">{{ $t('ayim.modes.options.mapsets') }}</nuxt-link>
+            <nuxt-link :to="`/${mode}/mappers`" class="btn">{{ $t('ayim.modes.options.mappers') }}</nuxt-link>
+            <nuxt-link :to="`/${mode}/comments`" class="btn">{{ $t('ayim.modes.options.comments') }}</nuxt-link>
         </div>
     </div>
     <div class="divisor"></div>
     <div class="records-menu">
-        <a href="#" :class="isSelected('records')" @click="$emit('update:currentTab', $event.target.innerText)">records</a>
-        <a href="#" :class="isSelected('statistics')" @click="$emit('update:currentTab', $event.target.innerText)">statistics</a>
+        <nuxt-link :to="`/${mode}`" :class="isSelected('records')">{{ $t('ayim.modes.options.records') }}</nuxt-link>
+        <nuxt-link :to="`/${mode}/statistics`" :class="isSelected('statistics')">{{ $t('ayim.modes.options.statistics') }}</nuxt-link>
     </div>
 </div>
 </template>
@@ -20,11 +20,12 @@
 export default {
     props: {
         currentTab: String,
+        mode: String,
     },
     methods: {
         isSelected: function(tab) {
             return this.currentTab == tab ? 'records-menu__item--selected' : 'records-menu__item';
-        }
+        },
     }
 }
 </script>
@@ -34,6 +35,13 @@ a {
     text-decoration: none;
 }
 .btn {
+    display: inline-block;
+    text-align: center;
+    padding: 1px 6px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-width: 2px;
+    border-style: outset;
     border-radius: 100px;
     border-color: transparent;
     min-width: 130px;
@@ -42,16 +50,17 @@ a {
     height: 100%;
     font-size: calc(1vw + 0.2em);
     margin-left: 17px;
-}
-.btn--pink {
     background-color: #fb2475;
     color: #fff;
+    transition: background-color 0.25s ease;
+    transition: color 0.25s ease;
+    cursor: pointer;
 }
-.btn--white {
+.btn:hover {
     background-color: #ffffff;
     color: #2a2a2a;
 }
-.btn--black {
+.btn:disabled {
     background-color: #2a2a2a;
     color: #aeaeae;
 }
@@ -101,6 +110,7 @@ a {
     .mode-nav {
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
     .mode-nav__menu {
         margin-left: 0;

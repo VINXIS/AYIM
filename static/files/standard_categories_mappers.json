@@ -1,0 +1,62 @@
+[
+    {
+        "name": "mostRanked",
+        "mappers": [
+            {
+                "id": 4452992,
+                "username": "Sotarks",
+                "value": 74
+            },
+            {
+                "id": 5364763,
+                "username": "Nao Tomori",
+                "value": 44
+            },
+            {
+                "id": 7451883,
+                "username": "Nevo",
+                "value": 37
+            }
+        ]
+    },
+    {
+        "name": "mostFavorite",
+        "mappers": [
+            {
+                "id": 4452992,
+                "username": "Sotarks",
+                "value": 28013
+            },
+            {
+                "id": 2706438,
+                "username": "Monstrata",
+                "value": 7544
+            },
+            {
+                "id": 7451883,
+                "username": "Nevo",
+                "value": 7489
+            }
+        ]
+    },
+    {
+        "name": "mostPlayed",
+        "mappers": [
+            {
+                "id": 4452992,
+                "username": "Sotarks",
+                "value": 84606615
+            },
+            {
+                "id": 7451883,
+                "username": "Nevo",
+                "value": 16507980
+            },
+            {
+                "id": 5504231,
+                "username": "Shmiklak",
+                "value": 11568573
+            }
+        ]
+    }
+]

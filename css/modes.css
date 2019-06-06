@@ -1,19 +1,42 @@
+:root {
+    --pink: #fb2475;
+    --hover: #2a2a2a;
+}
+
+.mode-wrapper {
+    margin-top: 5vh;
+    margin-right: 7vw;
+    margin-bottom: 10.5vh;
+}
+
 .cards-layout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    grid-gap: 20px;
+    grid-gap: 10px;
 }
 
 .card__header {
     background: transparent url('/rectangle-1-copy.png') no-repeat center;
     background-size: cover;
     margin-bottom: 15px;
-    border-left: 1px #fb2475 solid;
-    border-bottom: 1px #fb2475 solid;
+    border-left: 1px var(--pink) solid;
+    border-bottom: 1px var(--pink) solid;
     height: calc(3vw + 6px);
     border-radius: 5px;
     position: relative;
     z-index: 1;
+    cursor: pointer;
+    transition: border 0.25s ease;
+}
+.card__header:hover {
+    border-left: 1px #fff solid;
+    border-bottom: 1px #fff solid;
+}
+.card__header:hover .card__header__content__dot {
+    background-color: #fff;
+}
+.card__header:hover .card__header__content__arrow {
+    border-color: transparent #fff transparent transparent;
 }
 .card__header::before {
     content: "";
@@ -35,35 +58,39 @@
 .card__header__content__dot {
     padding: 5px;
     margin-right: 15px;
-    background-color: #fb2475;
+    background-color: var(--pink);
+    transition: background-color 0.25s ease;
 }
 .card__header__content__title {
     text-shadow: 0px 0px 4px #fff;
+    text-transform: uppercase;
 }
 
 .card__body__content {
     padding: 10px;
     position: relative;
-    margin-bottom: 13px;
+    margin-bottom: 10px;
     z-index: 1;
+    min-height: calc(8.5vh + 10px);
+    border-radius: 7px;
+    background-size: cover;
 }
 .card__body__content::before {
     content: "";
-    background: #2a2a2a url('/delis.png') no-repeat center;
-    background-size: cover;
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 7px;
     position: absolute;
     top: 0; 
     left: 0;
     width: 100%; 
     height: 100%;  
     z-index: -1;
-    opacity: .4;
 }
 .card__body__content--small {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    min-height: calc(1vh + 10px);
 }
 .card__body__content__title {
     font-weight: bold;
@@ -74,14 +101,15 @@
 .card__body__content__artist, .card__body__content__host {
     line-height: 1.11;
 }
-.card__body__content__playcount {
+.card__body__content__count {
     font-size: calc(1vw + 1em);
     text-align: right;
     text-shadow: 0px 0px 4px #fff;
 }
-.card__body__content__playcount--small {
+.card__body__content__count--small {
     font-size: calc(1em);
     text-shadow: 0px 0px 4px #fff;
+    text-align: right;
 }
 
 /* Expanded */
@@ -92,13 +120,20 @@
     height: 0;
     border-style: solid;
     border-width: 0.8vw 1vw 0.8vw 0;
-    border-color: transparent #fb2475 transparent transparent;
+    border-color: transparent var(--pink) transparent transparent;
+    transition: border-color 0.25s ease;
+}
+.card__body__content--expanded {
+    display: grid;
+    grid-template-columns: calc(3vw + 6px) 1fr;
+    grid-gap: 8px;
 }
 .card__body__content__header {
     padding: 0 10px;
+    margin-bottom: 10px;
 }
-.card__body__content--expanded {
-    margin-bottom: 8px!important;
+.card__body__content__header > div {
+    text-transform: uppercase;
 }
 .card__body__content--small > div {
     flex: 1 1 20%;
@@ -109,19 +144,13 @@
 .card__body__content--small {
     text-shadow: 0px 0px 4px #fff;
 }
-.card__body__content--small > .card__body__content__number {
-    flex: 0 1 4%;
-    font-size: calc(1vw + 1em);
+.card__body__content__number {
+    font-size: calc(1vw + 0.7em);
     font-weight: bold;
-}
-.card__body__content__playcount--small {
-    text-align: right;
+    text-align: center;
 }
 
 /* stats */
-.card__body__content__stat-subtitle {
-    line-height: 1.1px;
-}
 .card__body__content__stat-title {
     font-size: calc(1vw + 1.7em);
 }

@@ -11,7 +11,7 @@ const config: NuxtConfiguration = {
     css: [
         '~/css/layout.css',
         '~/css/index.css',
-        '~/css/mapsets.css',
+        '~/css/modes.css',
     ],
     plugins: ['plugins/i18n.ts'],
 }
