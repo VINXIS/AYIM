@@ -12,11 +12,12 @@ export default ({ app }) => {
         locale: lang,
         fallbackLocale: 'en',
         messages: {
+            'de': require('../CorsaceAssets/lang/de.json'),
             'en': require('../CorsaceAssets/lang/en.json'), 
             'id': require('../CorsaceAssets/lang/id.json'),
             'kr': require('../CorsaceAssets/lang/kr.json'),
-            'de': require('../CorsaceAssets/lang/de.json'),
             'nl': require('../CorsaceAssets/lang/nl.json'),
+            'ru': require('../CorsaceAssets/lang/ru.json'),
         }
     })
 }

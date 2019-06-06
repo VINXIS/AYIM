@@ -6,7 +6,7 @@
             </nuxt-link>
             <div class="countdown">
                 <div>{{ $t('ayim.layout.mca2018') }}</div>
-                <Countdown deadline="2020-12-25 00:00:00"></Countdown>
+                <Countdown></Countdown>
                 <div>{{ $t('ayim.layout.days') }}</div>
             </div>
             <div class="header-right" 

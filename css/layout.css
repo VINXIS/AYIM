@@ -50,11 +50,14 @@ img {
     font-weight: lighter;
     text-align: right;
     align-self: center;
+    display: flex;
+    justify-content: right;
     flex-direction: column;
     padding: 0 26px;
     font-size: calc(1vw + 3.25px);
     white-space: nowrap;
     margin-left: auto;
+    line-height: 200%;
 }
 
 .header-right {
