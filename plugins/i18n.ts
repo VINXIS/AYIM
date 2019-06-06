@@ -13,7 +13,8 @@ export default ({ app }) => {
         fallbackLocale: 'en',
         messages: {
             'de': require('../CorsaceAssets/lang/de.json'),
-            'en': require('../CorsaceAssets/lang/en.json'), 
+            'en': require('../CorsaceAssets/lang/en.json'),
+            'fr': require('../CorsaceAssets/lang/fr.json'),
             'id': require('../CorsaceAssets/lang/id.json'),
             'kr': require('../CorsaceAssets/lang/kr.json'),
             'nl': require('../CorsaceAssets/lang/nl.json'),
