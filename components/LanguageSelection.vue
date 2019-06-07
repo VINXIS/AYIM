@@ -28,9 +28,6 @@ export default{
             localStorage.setItem('lang', lang);
         },
     },
-    created() {
-        console.log(this.$i18n.locale.toUpperCase())
-    },
     computed: {
         langs () {
             return Object.keys(this.$i18n.messages)
