@@ -7,7 +7,7 @@
             </div>
             <p class="indexParagraph" v-html="$t('ayim.index.home')"/>
         </div>
-        <img class="prettyimg" src="../CorsaceAssets/img/pic.png">
+        <img class="prettyimg" src="../CorsaceAssets/img/ayim-mca/pic.png">
     </div>
 </template>
 

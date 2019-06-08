@@ -1,29 +1,29 @@
 <template>
     <div class="nav">
         <nuxt-link to="/standard" class="nav-mode" :class="{ navActiveText: standard, standard: !standard }">
-            <img v-if="standard" src="../CorsaceAssets/img/standard-active.png">
-            <img v-else src="../CorsaceAssets/img/standard.png">
+            <img v-if="standard" src="../CorsaceAssets/img/modes/standard-active.png">
+            <img v-else src="../CorsaceAssets/img/modes/standard.png">
             <div>{{ $t('ayim.layout.nav.standard') }}</div>
         </nuxt-link>
         <nuxt-link to="/taiko" class="nav-mode" :class="{ navActiveText: taiko, taiko: !taiko }">
-            <img v-if="taiko" src="../CorsaceAssets/img/taiko-active.png">
-            <img v-else src="../CorsaceAssets/img/taiko.png">
+            <img v-if="taiko" src="../CorsaceAssets/img/modes/taiko-active.png">
+            <img v-else src="../CorsaceAssets/img/modes/taiko.png">
             <div>{{ $t('ayim.layout.nav.taiko') }}</div>
         </nuxt-link>
         <nuxt-link to="/fruits" class="nav-mode" :class="{ navActiveText: fruits, fruits: !fruits }">
-            <img v-if="fruits" src="../CorsaceAssets/img/fruits-active.png">
-            <img v-else src="../CorsaceAssets/img/fruits.png">
+            <img v-if="fruits" src="../CorsaceAssets/img/modes/fruits-active.png">
+            <img v-else src="../CorsaceAssets/img/modes/fruits.png">
             <div v-html="$t('ayim.layout.nav.fruits')">
             </div>  
         </nuxt-link>
         <nuxt-link to="/mania" class="nav-mode" :class="{ navActiveText: mania, mania: !mania }">
-            <img v-if="mania" src="../CorsaceAssets/img/mania-active.png">
-            <img v-else src="../CorsaceAssets/img/mania.png">
+            <img v-if="mania" src="../CorsaceAssets/img/modes/mania-active.png">
+            <img v-else src="../CorsaceAssets/img/modes/mania.png">
             <div>{{ $t('ayim.layout.nav.mania') }}</div>
         </nuxt-link>
         <nuxt-link to="/storyboard" class="nav-mode" :class="{ navActiveText: storyboard, storyboard: !storyboard }">
-            <img v-if="storyboard" src="../CorsaceAssets/img/storyboard-active.png">
-            <img v-else src="../CorsaceAssets/img/storyboard.png">
+            <img v-if="storyboard" src="../CorsaceAssets/img/modes/storyboard-active.png">
+            <img v-else src="../CorsaceAssets/img/modes/storyboard.png">
             <div>{{ $t('ayim.layout.nav.storyboard') }}</div>
         </nuxt-link>
     </div>
