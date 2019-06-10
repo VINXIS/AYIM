@@ -12,6 +12,7 @@ export default ({ app }) => {
         locale: lang,
         fallbackLocale: 'en',
         messages: {
+            'cn': require('../CorsaceAssets/lang/cn.json'),
             'de': require('../CorsaceAssets/lang/de.json'),
             'en': require('../CorsaceAssets/lang/en.json'),
             'fr': require('../CorsaceAssets/lang/fr.json'),
@@ -19,6 +20,7 @@ export default ({ app }) => {
             'kr': require('../CorsaceAssets/lang/kr.json'),
             'nl': require('../CorsaceAssets/lang/nl.json'),
             'ru': require('../CorsaceAssets/lang/ru.json'),
+            'tw': require('../CorsaceAssets/lang/tw.json'),
         }
     })
 }
