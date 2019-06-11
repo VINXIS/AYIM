@@ -24,27 +24,27 @@
 }
 
 .loading img:nth-child(3) {
-    animation: load1 3s linear infinite;
+    animation: load1 2.5s linear infinite;
 }
 
 .loading img:nth-child(4) {
-    animation: load2 3s linear infinite;
+    animation: load2 2.5s linear infinite;
 }
 
 .loading img:nth-child(5) {
-    animation: load3 3s linear infinite;
+    animation: load3 2.5s linear infinite;
 }
 
 .loading img:nth-child(6) {
-    animation: load4 3s linear infinite;
+    animation: load4 2.5s linear infinite;
 }
 
 .loading img:nth-child(7) {
-    animation: load5 3s linear infinite;
+    animation: load5 2.5s linear infinite;
 }
 
 .loading img:nth-child(1) {
-    animation: load6 3s linear infinite;
+    animation: load6 2.5s linear infinite;
 }
 
 @keyframes load1 {
