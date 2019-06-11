@@ -3,15 +3,39 @@
     <div class="mode-nav">
         <div class="mode-nav__title">osu<span style="color:#fb2475;">!{{ mode }}</span></div>
         <div class="mode-nav__menu">
-            <nuxt-link :to="`/${mode}/`" class="btn">{{ $t('ayim.modes.options.mapsets') }}</nuxt-link>
-            <nuxt-link :to="`/${mode}/mappers`" class="btn">{{ $t('ayim.modes.options.mappers') }}</nuxt-link>
-            <nuxt-link :to="`/${mode}/comments`" class="btn">{{ $t('ayim.modes.options.comments') }}</nuxt-link>
+            <nuxt-link 
+                :to="`/${mode}/`" 
+                class="btn" 
+                :class="{ 'btn--selected': currentMenu == 'mapsets' }"
+            >
+                {{ $t('ayim.modes.options.mapsets') }}
+            </nuxt-link>
+            <nuxt-link 
+                :to="`/${mode}/mappers`" 
+                class="btn"
+                :class="{ 'btn--selected': currentMenu == 'mappers' }"
+            >
+                {{ $t('ayim.modes.options.mappers') }}
+            </nuxt-link>
+            <nuxt-link :to="`/${mode}/comments`" class="btn" :class="{ 'btn--selected': currentMenu == 'comments' }">{{ $t('ayim.modes.options.comments') }}</nuxt-link>
         </div>
     </div>
     <div class="divisor"></div>
-    <div class="records-menu">
-        <nuxt-link :to="`/${mode}`" :class="isSelected('records')">{{ $t('ayim.modes.options.records') }}</nuxt-link>
-        <nuxt-link :to="`/${mode}/statistics`" :class="isSelected('statistics')">{{ $t('ayim.modes.options.statistics') }}</nuxt-link>
+    <div class="records-menu" v-if="currentMenu != 'comments'">
+        <nuxt-link
+            :to="`/${this.mode}/${currentMenu == 'mapsets' ? '' : currentMenu}`"
+            class="records-menu__item"
+            :class="{ 'records-menu__item--selected': currentTab == 'records' }"
+        >
+            {{ $t('ayim.modes.options.records') }}
+        </nuxt-link>
+        <nuxt-link
+            :to="`/${this.mode}/${currentMenu}/statistics`"
+            class="records-menu__item"
+            :class="{ 'records-menu__item--selected': currentTab == 'statistics' }"
+        >
+            {{ $t('ayim.modes.options.statistics') }}
+        </nuxt-link>
     </div>
 </div>
 </template>
@@ -19,14 +43,19 @@
 <script>
 export default {
     props: {
+        currentMenu: String,
         currentTab: String,
         mode: String,
     },
     methods: {
-        isSelected: function(tab) {
-            return this.currentTab == tab ? 'records-menu__item--selected' : 'records-menu__item';
-        },
-    }
+        setUrl: function(isStatistics) {
+            if (this.currentMenu == 'mapsets'){
+                return `/${this.mode}/${isStatistics ? 'statistics' : ''}`;
+            } else {
+                return `/${this.mode}/${this.currentMenu}/${isStatistics ? 'statistics' : ''}`;
+            }
+        }
+    },
 }
 </script>
 
@@ -35,34 +64,26 @@ a {
     text-decoration: none;
 }
 .btn {
-    display: inline-block;
-    text-align: center;
-    padding: 1px 6px;
-    vertical-align: middle;
-    box-sizing: border-box;
-    border-width: 2px;
-    border-style: outset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 100px;
-    border-color: transparent;
     min-width: 130px;
     width: calc(10vw);
-    min-height: 15px;
-    height: 100%;
+    min-height: 18px;
     font-size: calc(1vw + 0.2em);
     margin-left: 17px;
+    transition: color 0.25s ease, background-color 0.25s ease;
+    background-color: #2a2a2a;
+    color: #aeaeae;
+}
+.btn--selected {
     background-color: #fb2475;
     color: #fff;
-    transition: background-color 0.25s ease;
-    transition: color 0.25s ease;
-    cursor: pointer;
 }
 .btn:hover {
     background-color: #ffffff;
     color: #2a2a2a;
-}
-.btn:disabled {
-    background-color: #2a2a2a;
-    color: #aeaeae;
 }
 .mode-nav {
     display: flex;
@@ -72,6 +93,7 @@ a {
     margin-left: auto;
     margin-top: 10px;
     margin-bottom: 10px;
+    display: flex;
 }
 .mode-nav__title {
     font-size: calc(1vw + 1.5em);
@@ -93,10 +115,8 @@ a {
     padding-right: 7px;
 }
 .records-menu__item--selected {
-    border-bottom: 3px #fb2475 solid;
+    border-color: #fb2475;
     color: #fff;
-    padding-left: 7px;
-    padding-right: 7px;
 }
 
 .divisor {

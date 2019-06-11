@@ -1,6 +1,7 @@
 <template>
 <div v-if="category">
     <div class="card__header">
+        <img src="/bar-wide.png" alt="">
         <div class="card__header__content"
             @click="$emit('update:isExpanded', !isExpanded)"
         >

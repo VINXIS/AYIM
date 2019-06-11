@@ -1,0 +1,230 @@
+[
+    {
+        "name": "playcount",
+        "beatmapsets": [
+            {
+                "id": 765778,
+                "title": "Jocelyn Flores",
+                "artist": "XXXTENTACION",
+                "creator": "Chromoxx",
+                "value":  153729
+            },
+            {
+                "id": 653534,
+                "title": "The Day feat. Aruvn (dj-Jo Remix) Extended Version",
+                "artist": "Porno Graffiti",
+                "creator": "Chromoxx",
+                "value": 129663
+            },
+            {
+                "id": 781509,
+                "title": "HELIX (Edit ver.)",
+                "artist": "ESTi",
+                "creator": "hikiko-",
+                "value":  97128
+            }
+        ]
+    },
+    {
+        "name": "favorites",
+        "beatmapsets": [
+            {
+                "id": 855677,
+                "title": "Jocelyn Flores",
+                "artist": "XXXTENTACION",
+                "creator": "Chromoxx",
+                "value": 235
+            },
+            {
+                "id": 758101,
+                "title": "The Day feat. Aruvn (dj-Jo Remix) Extended Version",
+                "artist": "Porno Graffiti",
+                "creator": "Chromoxx",
+                "value": 175
+            },
+            {
+                "id": 653534,
+                "title": "Black Rover (TV Size)",
+                "artist": "Vickeblanka",
+                "creator": "Yales",
+                "value": 79
+            }
+        ]
+    },
+    {
+        "name": "length",
+        "beatmapsets": [
+            {
+                "id": 450709,
+                "title": "International Wrestling Festival 2016 -MAKE SPANKING GREAT AGAIN!-",
+                "artist": "Various Artists",
+                "creator": "Surono",
+                "value": "10:57"
+            },
+            {
+                "id": 724192,
+                "title": "World Fragments",
+                "artist": "xi",
+                "creator": "iloveyou4ever",
+                "value": "10:35"
+            },
+            {
+                "id": 755311,
+                "title": "Kourou ~ Eastern Dream",
+                "artist": "Demetori",
+                "creator": "ASPIRIN",
+                "value": "10:03"
+            }
+        ]
+    },
+    {
+        "name": "difficulties",
+        "beatmapsets": [
+            {
+                "id": 609700,
+                "title": "Baton Road",
+                "artist": "KANA-BOON",
+                "creator": "Gero",
+                "value": 23
+            },
+            {
+                "id": 727049,
+                "title": "DropZ-Line-",
+                "artist": "Getty vs. DJ DiA",
+                "creator": "Realazy",
+                "value": 21
+            },
+            {
+                "id": 860219,
+                "title": "ADAMAS (TV Size)",
+                "artist": "LiSA",
+                "creator": "Doormat",
+                "value": 17
+            }
+        ]
+    },
+    {
+        "name": "artist",
+        "beatmapsets": [
+            {
+                "id": 718454,
+                "title": "t+pazolite",
+                "value": 17
+            },
+            {
+                "id": 780885,
+                "title": "Camellia",
+                "value": 15
+            },
+            {
+                "id": 737103,
+                "title": "Demetori",
+                "value": 7
+            }
+        ]
+    },
+    {
+        "name": "streamLength",
+        "beatmapsets": [
+            {
+                "id": 687708,
+                "title": "Liar Liar (Wasteland Monarchy)",
+                "artist": "KAMELOT",
+                "creator": "vrnl",
+                "value": 383
+            },
+            {
+                "id": 843008,
+                "title": "HONESTY",
+                "artist": "GYZE",
+                "creator": "Volta",
+                "value": 315
+            },
+            {
+                "id": 795432,
+                "title": "Duncan Hills Coffee Jingle",
+                "artist": "Dethklok",
+                "creator": "frukoyurdakul",
+                "value": 281
+            }
+        ]
+    },
+    {
+        "name": "highestStarRating",
+        "beatmapsets": [
+            {
+                "id": 687708,
+                "title": "Ultrasonic Anthem (Kobaryo's FTN-Remix)",
+                "artist": "t+pazolite",
+                "creator": "tasuke912",
+                "value": 9.26
+            },
+            {
+                "id": 843008,
+                "title": "Slash Dot Slash (Slim boy fat)",
+                "artist": "Round Wave Crusher",
+                "creator": "Backfire",
+                "value": 8.67
+            },
+            {
+                "id": 795432,
+                "title": "Bostonian Life!",
+                "artist": "K.Rekii",
+                "creator": "KyouRekii87",
+                "value": 8.39
+            }
+        ]
+    },
+    {
+        "name": "highestCombo",
+        "beatmapsets": [
+            {
+                "id": 450709,
+                "title": "International Wrestling Festival 2016 -MAKE SPANKING GREAT AGAIN!-",
+                "artist": "Various Artists",
+                "creator": "Surono",
+                "value": 4269
+            },
+            {
+                "id": 843008,
+                "title": "Inside the Winter Storm",
+                "artist": "DragonForce",
+                "creator": "zigizigiefe",
+                "value": 4034
+            },
+            {
+                "id": 724192,
+                "title": "World Fragments",
+                "artist": "xi",
+                "creator": "iloveyou4ever",
+                "value": 3909
+            }
+        ]
+    },
+    {
+        "name": "highestBpm",
+        "beatmapsets": [
+            {
+                "id": 450709,
+                "title": "New Game Plus",
+                "artist": "Kobaryo",
+                "creator": "Nepuri",
+                "value": 400
+            },
+            {
+                "id": 687708,
+                "title": "Ultrasonic Anthem (Kobaryo's FTN-Remix)",
+                "artist": "t+pazolite",
+                "creator": "tasuke912",
+                "value": 300
+            },
+            {
+                "id": 724192,
+                "title": "Icicle Stinger",
+                "artist": "ROKINA",
+                "creator": "EdamaMe411",
+                "value": 285
+            }
+        ]
+    }
+]

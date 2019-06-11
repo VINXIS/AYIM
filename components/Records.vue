@@ -3,6 +3,7 @@
     <div class="cards-layout" v-if="!isExpanded && categories">
         <div v-for="category in categories" :key="category.name" class="card">
             <div class="card__header">
+                <img src="/bar-small.png" alt="">
                 <div class="card__header__content"
                     @click="expand(category.name)"
                 >
@@ -10,12 +11,12 @@
                     <div class="card__header__content__title">{{ $t(`ayim.modes.records.${category.name}`) }}</div>
                 </div>
             </div>
-            <div class="card__body" v-if="menu == 'beatmapsets'">
+            <div class="card__body">
                 <div v-for="(beatmapset, i) in category.beatmapsets" :key="beatmapset.id">
                     <div 
                         v-if="i == 0" 
                         class="card__body__content" 
-                        :style="`background-image: url('https://assets.ppy.sh/beatmaps/${beatmapset.id}/covers/cover.jpg'`"
+                        :style="`background-image: url('https://assets.ppy.sh/beatmaps/${beatmapset.id}/covers/cover.jpg')`"
                     >
                         <div class="card__body__content__title">
                             {{ beatmapset.title }}
@@ -23,7 +24,7 @@
                         <div class="card__body__content__artist">
                             {{ beatmapset.artist }}
                         </div>
-                        <div class="card__body__content__host">
+                        <div class="card__body__content__host" v-if="beatmapset.creator">
                             {{ $t('ayim.modes.records.hostedBy') }} <b>{{ beatmapset.creator }}</b>
                         </div>
                         <div class="card__body__content__count">
@@ -34,28 +35,13 @@
                     <div 
                         v-else
                         class="card__body__content card__body__content--small"
-                        :style="`background-image: url('https://assets.ppy.sh/beatmaps/${beatmapset.id}/covers/cover.jpg'`"
+                        :style="`background-image: url('https://assets.ppy.sh/beatmaps/${beatmapset.id}/covers/cover.jpg')`"
                     >
                         <div class="card__body__content__title--small">
                             {{ beatmapset.title }}
                         </div>
                         <div class="card__body__content__count--small">
                             {{ beatmapset.value.toLocaleString() }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card__body" v-else>
-                <div v-for="mapper in category.mappers" :key="mapper.id">
-                    <div 
-                        class="card__body__content"
-                        :style="`background-image: url('https://a.ppy.sh/${mapper.id}'`"
-                    >
-                        <div class="card__body__content__title">
-                            {{ mapper.username }}
-                        </div>
-                        <div class="card__body__content__count">
-                            {{ mapper.value.toLocaleString() }}
                         </div>
                     </div>
                 </div>
@@ -81,7 +67,6 @@ export default {
         RecordsExpanded,
     },
     props: {
-        menu: String,
         mode: String,
     },
     data () {
@@ -101,13 +86,9 @@ export default {
     },
     async mounted () {
         try {
-            if (this.menu == 'beatmapsets') {
-                this.categories = (await axios.get(`/files/${this.mode}_categories.json`)).data;
-                this.beatmapsets = (await axios.get(`/files/${this.mode}_beatmapsets.json`)).data;
-                this.beatmaps = (await axios.get(`/files/${this.mode}_beatmaps.json`)).data;
-            } else if (this.menu == 'mappers') {
-                this.categories = (await axios.get(`/files/${this.mode}_categories_mappers.json`)).data;
-            }
+            this.categories = (await axios.get(`/${this.mode}/categories_beatmapsets.json`)).data;
+            this.beatmapsets = (await axios.get(`/${this.mode}/beatmapsets.json`)).data;
+            this.beatmaps = (await axios.get(`/${this.mode}/beatmaps.json`)).data;
         } catch (error) {
             console.log(error);
         }

@@ -1,11 +1,12 @@
 <template>
     <div class="mode-wrapper">
-        <options-menu 
+        <options-menu
+            :currentMenu="$route.params.menu"
             :currentTab="'statistics'"
-            :mode="'standard'"
+            :mode="$route.params.mode"
         ></options-menu>
         <statistics
-            :mode="'standard'"
+            :mode="$route.params.mode"
         ></statistics>
     </div>
 </template>
@@ -18,6 +19,10 @@ export default {
     components: {
         OptionsMenu,
         Statistics,
+    },
+    validate ({ params }) {
+        return /^(standard|taiko|fruits|mania|storyboard)+$/.test(params.mode) &&
+            /^(mappers|mapsets)+$/.test(params.menu);
     },
 }
 </script>

@@ -2,6 +2,7 @@
     <div class="cards-layout" v-if="stats">
         <div v-for="stat in stats" :key="stat.name" class="card">
             <div class="card__header">
+                <img src="/bar-small.png" alt="">
                 <div class="card__header__content">
                     <div class="card__header__content__dot"></div>
                     <div class="card__header__content__title">{{ stat.name }}</div>
@@ -42,7 +43,7 @@ export default {
     },
     async mounted () {
         try {
-            this.stats = (await axios.get(`/files/${this.mode}_stats.json`)).data;
+            this.stats = (await axios.get(`/${this.mode}/stats_beatmapsets.json`)).data;
         } catch (error) {
             console.log(error);
         }
