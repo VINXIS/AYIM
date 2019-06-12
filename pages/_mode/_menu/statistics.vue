@@ -7,6 +7,7 @@
         ></options-menu>
         <statistics
             :mode="$route.params.mode"
+            :menu="$route.params.menu"
         ></statistics>
     </div>
 </template>

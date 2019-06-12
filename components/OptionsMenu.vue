@@ -21,18 +21,18 @@
         </div>
     </div>
     <div class="divisor"></div>
-    <div class="records-menu" v-if="currentMenu != 'comments'">
+    <div class="tabs" v-if="currentMenu != 'comments'">
         <nuxt-link
             :to="`/${this.mode}/${currentMenu == 'mapsets' ? '' : currentMenu}`"
-            class="records-menu__item"
-            :class="{ 'records-menu__item--selected': currentTab == 'records' }"
+            class="tabs__item"
+            :class="{ 'tabs__item--selected': currentTab == 'records' }"
         >
             {{ $t('ayim.modes.options.records') }}
         </nuxt-link>
         <nuxt-link
             :to="`/${this.mode}/${currentMenu}/statistics`"
-            class="records-menu__item"
-            :class="{ 'records-menu__item--selected': currentTab == 'statistics' }"
+            class="tabs__item"
+            :class="{ 'tabs__item--selected': currentTab == 'statistics' }"
         >
             {{ $t('ayim.modes.options.statistics') }}
         </nuxt-link>
@@ -100,21 +100,22 @@ a {
     font-weight: bold;
     color: #ffffff;
 }
-.records-menu {
+.tabs {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     letter-spacing: 2px;
     font-size: calc(1vw + 0.5em);
+    margin-top: 14px;
     margin-bottom: 30px;
 }
-.records-menu__item {
+.tabs__item {
     border-bottom: 3px #808080 solid;
     color: #808080;
     padding-left: 7px;
     padding-right: 7px;
 }
-.records-menu__item--selected {
+.tabs__item--selected {
     border-color: #fb2475;
     color: #fff;
 }

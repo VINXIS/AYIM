@@ -1,0 +1,17 @@
+[
+    {
+        "name": "totalBeatmapsets",
+        "definitions": [
+            {
+                "title": "RANKED",
+                "subtitle": "Number of maps",
+                "value": 454
+            },
+            {
+                "title": "LOVED",
+                "subtitle": "Number of maps",
+                "value": 172
+            }
+        ]
+    }
+]

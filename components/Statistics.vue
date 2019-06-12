@@ -8,21 +8,19 @@
                     <div class="card__header__content__title">{{ stat.name }}</div>
                 </div>
             </div>
-            <div class="card__body">
-                <div 
-                    class="card__body__content"
-                    v-for="definition in stat.definitions" 
-                    :key="definition.id"
-                >
-                    <div class="card__body__content__stat-subtitle">
-                        {{ definition.subtitle }}
-                    </div>
-                    <div class="card__body__content__stat-title">
-                        {{ definition.title }}
-                    </div>
-                    <div class="card__body__content__stat-ammount">
-                        {{ definition.value }}
-                    </div>
+            <div 
+                class="card__body"
+                v-for="definition in stat.definitions" 
+                :key="definition.id"
+            >
+                <div>
+                    {{ definition.subtitle }}
+                </div>
+                <div class="card__body__stat-title">
+                    {{ definition.title }}
+                </div>
+                <div class="card__body__stat-value">
+                    {{ definition.value }}
                 </div>
             </div>
         </div>
@@ -35,6 +33,7 @@ import axios from 'axios';
 export default {
     props: {
         mode: String,
+        menu: String,
     },
     data () {
         return {
@@ -43,10 +42,21 @@ export default {
     },
     async mounted () {
         try {
-            this.stats = (await axios.get(`/${this.mode}/stats_beatmapsets.json`)).data;
+            this.stats = (await axios.get(`/${this.mode}/stats_${this.menu}.json`)).data;
         } catch (error) {
             console.log(error);
         }
     },
 }
 </script>
+
+<style>
+.card__body__stat-title {
+    font-size: calc(1vw + 1.5em);
+}
+.card__body__stat-value {
+    font-size: calc(1vw + 1.7em);
+    text-align: right;
+    text-shadow: 0px 0px 4px #fff;
+}
+</style>
