@@ -6,18 +6,18 @@
             @click="$emit('update:isExpanded', !isExpanded)"
         >
             <div class="card__header__content__arrow"></div>
-            <div class="card__header__content__title">{{ category }}</div>
+            <div class="card__header__content__title">{{ $t(`ayim.modes.records.${category}`) }}</div>
         </div>
     </div>
 
     <div class="card__body--expanded">
         <div class="card__body__number"></div>
         <div class="card__body__header card__body--small">
-            <div class="card__body__title">TITLE</div>
-            <div>ARTIST</div>
-            <div v-if="category == 'passrate'">VERSION</div>
-            <div v-if="category != 'title'">HOSTED BY</div>
-            <div class="card__body__value">{{ category }}</div>
+            <div v-if="category != 'countArtist'" class="card__body__title">{{ $t('ayim.modes.recordsDetail.title') }}</div>
+            <div>{{ $t('ayim.modes.recordsDetail.artist') }}</div>
+            <div v-if="category == 'passrate'">{{ $t('ayim.modes.recordsDetail.version') }}</div>
+            <div v-if="category != 'countTitle' && category != 'countArtist'">{{ $t('ayim.modes.records.hostedBy') }}</div>
+            <div class="card__body__value">{{ $t(`ayim.modes.records.${category}`) }}</div>
         </div>
     </div>
 
@@ -31,12 +31,12 @@
             class="card__body card__body--small"
             :style="`background-image: url('https://assets.ppy.sh/beatmaps/${beatmapset.id}/covers/cover.jpg'`"
         >
-            <i class="card__body__title">{{ beatmapset.title }}</i>
+            <i v-if="category != 'countArtist'" class="card__body__title">{{ beatmapset.title }}</i>
             <div>{{ beatmapset.artist }}</div>
             <div v-if="category == 'passrate'">{{ beatmapset.version }}</div>
-            <div v-if="category != 'title'">{{ beatmapset.creator }}</div>
+            <div v-if="category != 'countTitle' && category != 'countArtist'">{{ beatmapset.creator }}</div>
             <div class="card__body__value">
-                {{ category == 'title' ? beatmapset.count : beatmapset[category].toLocaleString() }}
+                {{ $parent.getBeatmapValue(beatmapset, category) }}
             </div>
         </div>
     </div>
@@ -49,17 +49,15 @@ export default {
         isExpanded: Boolean,
         category: String,
         beatmapsets: Array,
-        beatmaps: Array,
     },
     data () {
         return {
             limit: 20,
-            sortedBeatmapsets: [],
         }
     },
     computed: {
         beatmapsetsPage: function() {
-            return this.sortedBeatmapsets.slice(0, this.limit);
+            return this.beatmapsets.slice(0, this.limit);
         },
     },
     methods: {
@@ -70,38 +68,8 @@ export default {
                 }
             };
         },
-        sortBy: function(field) {
-            if (this.beatmapsets) {
-                return [...this.beatmapsets].sort((a, b) => {
-                    if (a[field] > b[field]) return -1;
-                    else if (a[field] < b[field]) return 1;
-                    else return 0;
-                });
-            }
-        },
     },
     async mounted () {
-        if (this.category == 'title') {
-            this.beatmapsets.forEach(b => {
-                const i = this.sortedBeatmapsets.findIndex(bb => bb.title == b.title && !bb.title.toString().includes('Compilation'));
-                if (i != -1) {
-                    this.sortedBeatmapsets[i].count += 1;
-                } else {
-                    b.count = 1;
-                    this.sortedBeatmapsets.push(b);
-                }
-            });
-
-            this.sortedBeatmapsets.sort((a, b) => {
-                if (a.count > b.count) return -1;
-                else return a.count < b.count;
-            });
-        } else if (this.category == 'passrate') {
-            this.sortedBeatmapsets = this.beatmaps
-        } else {
-            this.sortedBeatmapsets = this.sortBy(this.category);
-        }
-
         this.scroll();
     },
 }
@@ -124,9 +92,6 @@ export default {
 }
 .card__header__content--expanded .card__header__content__title {
     letter-spacing: 0.3em;
-}
-.card__body--expanded .card__body__value {
-    margin-top: 0;
 }
 .card__body--expanded .card__body {
     padding-left: 20px;

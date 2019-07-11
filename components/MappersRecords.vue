@@ -18,12 +18,12 @@
                     <div class="card__body__mapper__content">
                         <div 
                             v-if="i != 0" class="card__body__mapper__content__flag" 
-                            style="background-image: url('http://simpleicon.com/wp-content/uploads/flag.svg')"
+                            :style="`background-image: url('https://osu.ppy.sh/images/flags/${mapper.country}.png')`"
                         ></div>
                         <div class="card__body__mapper__content__username">{{ mapper.username }}</div>
                         <div 
                             v-if="i == 0" class="card__body__mapper__content__flag"
-                            style="background-image: url('http://simpleicon.com/wp-content/uploads/flag.svg')"
+                            :style="`background-image: url('https://osu.ppy.sh/images/flags/${mapper.country}.png')`"
                         ></div>
                         <div class="card__body__mapper__content__value">{{ mapper.value.toLocaleString() }}</div>
                     </div>

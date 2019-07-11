@@ -16,6 +16,9 @@ import OptionsMenu from '~/Components/OptionsMenu';
 import MappersRecords from '~/Components/MappersRecords';
 
 export default {
+    head: {
+        title: `AYIM - mappers`
+    },
     components: {
         OptionsMenu,
         MappersRecords,

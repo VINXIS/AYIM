@@ -1,0 +1,48 @@
+[
+    {
+        "name": "mostRanked",
+        "mappers": [
+            {
+                "id": 4452992,
+                "username": "PoNo",
+                "country": "FR",
+                "value": 14
+            },
+            {
+                "id": 5364763,
+                "username": "[ Kuro Usagi ]",
+                "country": "US",
+                "value": 12
+            },
+            {
+                "id": 7451883,
+                "username": "Noffy",
+                "country": "US",
+                "value": 11
+            }
+        ]
+    },
+    {
+        "name": "mostFavorite",
+        "mappers": [
+            {
+                "id": 4452992,
+                "username": "PoNo",
+                "country": "FR",
+                "value": 7737
+            },
+            {
+                "id": 2706438,
+                "username": "smau5",
+                "country": "CA",
+                "value": 3367
+            },
+            {
+                "id": 7451883,
+                "username": "-Tochi",
+                "country": "US",
+                "value": 2474
+            }
+        ]
+    }
+]

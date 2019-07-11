@@ -17,6 +17,9 @@ import OptionsMenu from '~/Components/OptionsMenu';
 import Statistics from '~/Components/Statistics';
 
 export default {
+    head: {
+        title: `AYIM - statistics`
+    },
     components: {
         OptionsMenu,
         Statistics,

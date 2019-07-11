@@ -17,6 +17,9 @@ import OptionsMenu from '~/Components/OptionsMenu';
 import Records from '~/Components/Records';
 
 export default {
+    head: {
+        title: `AYIM - mapsets`
+    },
     components: {
         OptionsMenu,
         Records,

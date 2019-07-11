@@ -5,22 +5,27 @@
             {
                 "title": "AR10",
                 "subtitle": "Number of maps with",
-                "value": 15
+                "value": 1
             },
             {
-                "title": "AR1",
+                "title": "AR4",
                 "subtitle": "Number of maps with",
-                "value": 8
+                "value": 1
             }
         ]
     },
     {
-        "name": "overallDifficulty",
+        "name": "circleSize",
         "definitions": [
             {
-                "title": "OD10",
+                "title": "CS2",
                 "subtitle": "Number of maps with",
-                "value": 13
+                "value": 18
+            },
+            {
+                "title": "CS6",
+                "subtitle": "Number of maps with",
+                "value": 2
             }
         ]
     },
@@ -28,14 +33,14 @@
         "name": "hpDrain",
         "definitions": [
             {
-                "title": "HP0",
+                "title": "HP3",
                 "subtitle": "Number of maps with",
-                "value": 5
+                "value": 113
             },
             {
-                "title": "HP9",
+                "title": "HP8",
                 "subtitle": "Number of maps with",
-                "value": 4
+                "value": 7
             }
         ]
     },
@@ -45,12 +50,12 @@
             {
                 "title": "RANKED",
                 "subtitle": "Number of maps",
-                "value": 2051
+                "value": 197
             },
             {
                 "title": "LOVED",
                 "subtitle": "Number of maps",
-                "value": 273
+                "value": 103
             }
         ]
     }

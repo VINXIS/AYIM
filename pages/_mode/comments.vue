@@ -12,6 +12,9 @@
 import OptionsMenu from '~/Components/OptionsMenu';
 
 export default {
+    head: {
+        title: `AYIM - comments`
+    },
     components: {
         OptionsMenu,
     },
