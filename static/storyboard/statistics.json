@@ -1,0 +1,30 @@
+[
+    {
+        "name": "totalSBBeatmapsets",
+        "definitions": [
+            {
+                "id": "ranked",
+                "subid": "Number of maps with SB",
+                "value": 261
+            },
+            {
+                "id": "diffSpecific",
+                "subid": "Number of maps with SB",
+                "value": 126
+            }
+        ]
+    },
+    {
+        "name": "sprites",
+        "definitions": [
+            {
+                "id": "total",
+                "value": 987678
+            },
+            {
+                "id": "average",
+                "value": 3418
+            }
+        ]
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "name": "totalBeatmapsets",
+        "definitions": [
+            {
+                "id": "ranked",
+                "value": 454
+            },
+            {
+                "id": "loved",
+                "value": 172
+            }
+        ]
+    },
+    {
+        "name": "lastTotalBeatmapsets",
+        "definitions": [
+            {
+                "id": "ranked",
+                "value": 355
+            },
+            {
+                "id": "loved",
+                "value": 48
+            }
+        ]
+    },
+    {
+        "name": "mappers",
+        "definitions": [
+            {
+                "id": "newMappers",
+                "value": 53
+            }
+        ]
+    }
+]

@@ -1,0 +1,73 @@
+[
+    {
+        "name": "totalBeatmapsets",
+        "definitions": [
+            {
+                "id": "ranked",
+                "value": 197
+            },
+            {
+                "id": "loved",
+                "value": 103
+            }
+        ]
+    },
+    {
+        "name": "mappers",
+        "definitions": [
+            {
+                "id": "newMappers",
+                "value": 23
+            },
+            {
+                "id": "activeMappers",
+                "value": 65
+            }
+        ]
+    },
+    {
+        "name": "approachRate",
+        "definitions": [
+            {
+                "id": "ar",
+                "number": 10,
+                "value": 1
+            },
+            {
+                "id": "ar",
+                "number": 4 ,
+                "value": 1
+            }
+        ]
+    },
+    {
+        "name": "circleSize",
+        "definitions": [
+            {
+                "id": "cs",
+                "number": 2,
+                "value": 18
+            },
+            {
+                "id": "cs",
+                "number": 6,
+                "value": 2
+            }
+        ]
+    },
+    {
+        "name": "hpDrain",
+        "definitions": [
+            {
+                "id": "hp",
+                "number": 3,
+                "value": 113
+            },
+            {
+                "id": "hp",
+                "number": 8,
+                "value": 7
+            }
+        ]
+    }
+]

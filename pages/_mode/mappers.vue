@@ -2,7 +2,6 @@
     <div class="mode-wrapper">
         <options-menu 
             :currentMenu="'mappers'"
-            :currentTab="'records'"
             :mode="$route.params.mode"
         ></options-menu>
         <mappers-records

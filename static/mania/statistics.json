@@ -3,18 +3,17 @@
         "name": "keys",
         "definitions": [
             {
-                "title": "4K",
-                "subtitle": "Number of maps with",
+                "id": "numberKeys",
+                "number": 4,
                 "value": 543
             },
             {
-                "title": "7K",
-                "subtitle": "Number of maps with",
+                "id": "numberKeys",
+                "number": 7,
                 "value": 115
             },
             {
-                "title": "Others keys",
-                "subtitle": "Number of maps with",
+                "id": "othersKeys",
                 "value": 78
             }
         ]
@@ -23,13 +22,13 @@
         "name": "overallDifficulty",
         "definitions": [
             {
-                "title": "OD6",
-                "subtitle": "Number of maps with",
+                "id": "od",
+                "number": 6,
                 "value": 29
             },
             {
-                "title": "OD9",
-                "subtitle": "Number of maps with",
+                "id": "od",
+                "number": 9,
                 "value": 24
             }
         ]
@@ -38,13 +37,13 @@
         "name": "hpDrain",
         "definitions": [
             {
-                "title": "HP6",
-                "subtitle": "Number of maps with",
+                "id": "hp",
+                "number": 6,
                 "value": 28
             },
             {
-                "title": "HP9",
-                "subtitle": "Number of maps with",
+                "id": "hp",
+                "number": 9,
                 "value": 38
             }
         ]
@@ -53,13 +52,11 @@
         "name": "totalBeatmapsets",
         "definitions": [
             {
-                "title": "RANKED",
-                "subtitle": "Number of maps",
+                "id": "ranked",
                 "value": 193
             },
             {
-                "title": "LOVED",
-                "subtitle": "Number of maps",
+                "id": "loved",
                 "value": 198
             }
         ]

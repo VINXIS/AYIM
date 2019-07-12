@@ -2,7 +2,6 @@
     <div class="mode-wrapper">
         <options-menu 
             :currentMenu="'comments'"
-            :currentTab="'records'"
             :mode="$route.params.mode"
         ></options-menu>
     </div>

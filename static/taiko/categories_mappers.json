@@ -3,59 +3,22 @@
         "name": "mostRanked",
         "mappers": [
             {
-                "id": 4452992,
+                "id": 3388410,
                 "username": "eiri-",
+                "country": "US",
                 "value": 33
             },
             {
-                "id": 5364763,
+                "id": 845733,
                 "username": "Faputa",
+                "country": "HK",
                 "value": 12
             },
             {
-                "id": 7451883,
+                "id": 876419,
                 "username": "Nardoxyribonucleic",
+                "country": "HK",
                 "value": 11
-            }
-        ]
-    },
-    {
-        "name": "mostFavorite",
-        "mappers": [
-            {
-                "id": 4452992,
-                "username": "Sotarks",
-                "value": 28013
-            },
-            {
-                "id": 2706438,
-                "username": "Monstrata",
-                "value": 7544
-            },
-            {
-                "id": 7451883,
-                "username": "Nevo",
-                "value": 7489
-            }
-        ]
-    },
-    {
-        "name": "mostPlayed",
-        "mappers": [
-            {
-                "id": 4452992,
-                "username": "Sotarks",
-                "value": 84606615
-            },
-            {
-                "id": 7451883,
-                "username": "Nevo",
-                "value": 16507980
-            },
-            {
-                "id": 5504231,
-                "username": "Shmiklak",
-                "value": 11568573
             }
         ]
     }

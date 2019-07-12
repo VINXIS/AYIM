@@ -19,13 +19,15 @@
     height: calc(3.5vw + 6px);
     position: relative;
     z-index: 1;
+}
+.card__header--expandable {
     cursor: pointer;
     transition: border 0.25s ease;
 }
-.card__header:hover .card__header__content__dot {
+.card__header--expandable:hover .card__header__content__dot {
     background-color: #fff;
 }
-.card__header:hover .card__header__content__arrow {
+.card__header--expandable:hover .card__header__content__arrow {
     border-color: transparent #fff transparent transparent;
 }
 .card__header img {
@@ -55,7 +57,7 @@
     position: relative;
     margin-bottom: 10px;
     z-index: 1;
-    min-height: calc(8.5vh + 10px);
+    min-height: 140px;
     border-radius: 7px;
     background-size: cover;
     display: flex;

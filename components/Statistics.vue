@@ -5,22 +5,22 @@
                 <img src="/bar-small.png" alt="">
                 <div class="card__header__content">
                     <div class="card__header__content__dot"></div>
-                    <div class="card__header__content__title">{{ stat.name }}</div>
+                    <div class="card__header__content__title">{{ $t(`ayim.modes.statistics.${stat.name}.header`) }}</div>
                 </div>
             </div>
             <div 
                 class="card__body"
-                v-for="definition in stat.definitions" 
-                :key="definition.id"
+                v-for="(definition, i) in stat.definitions" 
+                :key="i"
             >
                 <div>
-                    {{ definition.subtitle }}
+                    {{ $t(`ayim.modes.statistics.${stat.name}.subtitle`) }}
                 </div>
                 <div class="card__body__stat-title">
-                    {{ definition.title }}
+                    {{ $t(`ayim.modes.statistics.${stat.name}.${definition.id}`, { number: definition.number}) }}
                 </div>
                 <div class="card__body__stat-value">
-                    {{ definition.value }}
+                    {{ definition.value.toLocaleString() }}
                 </div>
             </div>
         </div>
@@ -33,7 +33,6 @@ import axios from 'axios';
 export default {
     props: {
         mode: String,
-        menu: String,
     },
     data () {
         return {
@@ -42,7 +41,7 @@ export default {
     },
     async mounted () {
         try {
-            this.stats = (await axios.get(`/${this.mode}/stats_${this.menu}.json`)).data;
+            this.stats = (await axios.get(`/${this.mode}/statistics.json`)).data;
         } catch (error) {
             console.log(error);
         }
@@ -58,5 +57,6 @@ export default {
     font-size: calc(1vw + 1.7em);
     text-align: right;
     text-shadow: 0px 0px 4px #fff;
+    margin-top: auto;
 }
 </style>

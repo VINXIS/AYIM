@@ -17,26 +17,23 @@
             >
                 {{ $t('ayim.modes.options.mappers') }}
             </nuxt-link>
-            <nuxt-link :to="`/${mode}/comments`" class="btn" :class="{ 'btn--selected': currentMenu == 'comments' }">{{ $t('ayim.modes.options.comments') }}</nuxt-link>
+            <nuxt-link 
+                :to="`/${mode}/statistics`" 
+                class="btn" 
+                :class="{ 'btn--selected': currentMenu == 'statistics' }"
+            >
+                {{ $t('ayim.modes.options.statistics') }}
+            </nuxt-link>
+            <nuxt-link 
+                :to="`/${mode}/comments`" 
+                class="btn" 
+                :class="{ 'btn--selected': currentMenu == 'comments' }"
+            >
+                {{ $t('ayim.modes.options.comments') }}
+            </nuxt-link>
         </div>
     </div>
     <div class="divisor"></div>
-    <div class="tabs" v-if="currentMenu != 'comments'">
-        <nuxt-link
-            :to="`/${this.mode}/${currentMenu == 'mapsets' ? '' : currentMenu}`"
-            class="tabs__item"
-            :class="{ 'tabs__item--selected': currentTab == 'records' }"
-        >
-            {{ $t('ayim.modes.options.records') }}
-        </nuxt-link>
-        <nuxt-link
-            :to="`/${this.mode}/${currentMenu}/statistics`"
-            class="tabs__item"
-            :class="{ 'tabs__item--selected': currentTab == 'statistics' }"
-        >
-            {{ $t('ayim.modes.options.statistics') }}
-        </nuxt-link>
-    </div>
 </div>
 </template>
 
@@ -44,18 +41,8 @@
 export default {
     props: {
         currentMenu: String,
-        currentTab: String,
         mode: String,
-    },
-    methods: {
-        setUrl: function(isStatistics) {
-            if (this.currentMenu == 'mapsets'){
-                return `/${this.mode}/${isStatistics ? 'statistics' : ''}`;
-            } else {
-                return `/${this.mode}/${this.currentMenu}/${isStatistics ? 'statistics' : ''}`;
-            }
-        }
-    },
+    }
 }
 </script>
 
@@ -100,31 +87,12 @@ a {
     font-weight: bold;
     color: #ffffff;
 }
-.tabs {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    letter-spacing: 2px;
-    font-size: calc(1vw + 0.5em);
-    margin-top: 14px;
-    margin-bottom: 30px;
-}
-.tabs__item {
-    border-bottom: 3px #808080 solid;
-    color: #808080;
-    padding-left: 7px;
-    padding-right: 7px;
-}
-.tabs__item--selected {
-    border-color: #fb2475;
-    color: #fff;
-}
-
 .divisor {
     width: 100%;
     padding-bottom: 10px;
     background: url('/line-copy.png') no-repeat center;
     background-size: contain;
+    margin-bottom: 30px;
 }
 
 @media screen and (max-width: 990px) {

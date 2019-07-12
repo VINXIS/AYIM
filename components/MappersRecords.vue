@@ -1,14 +1,12 @@
 <template>
 <div>
-    <div class="cards-layout" v-if="!isExpanded && categories">
+    <div class="cards-layout" v-if="categories">
         <div v-for="category in categories" :key="category.name" class="card">
             <div class="card__header">
                 <img src="/bar-small.png" alt="">
-                <div class="card__header__content"
-                    @click="expand(category.name)"
-                >
+                <div class="card__header__content">
                     <div class="card__header__content__dot"></div>
-                    <div class="card__header__content__title">{{ $t(`ayim.modes.records.${category.name}`) }}</div>
+                    <div class="card__header__content__title">{{ $t(`ayim.modes.records.mappers.${category.name}`) }}</div>
                 </div>
             </div>
             <div v-for="(mapper, i) in category.mappers" :key="mapper.id">
@@ -43,18 +41,11 @@ export default {
     },
     data () {
         return {
-            isExpanded: false,
             categorySelected: null,
             categories: null,
             beatmapsets: null,
             beatmaps: null,
         }
-    },
-    methods: {
-        expand: async function(categoryName) {
-            this.categorySelected = categoryName;
-            this.isExpanded = !this.isExpanded;
-        },
     },
     async mounted () {
         try {

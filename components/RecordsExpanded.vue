@@ -1,12 +1,12 @@
 <template>
 <div v-if="category">
-    <div class="card__header">
+    <div class="card__header card__header--expandable">
         <img src="/bar-wide.png" alt="">
         <div class="card__header__content card__header__content--expanded"
             @click="$emit('update:isExpanded', !isExpanded)"
         >
             <div class="card__header__content__arrow"></div>
-            <div class="card__header__content__title">{{ $t(`ayim.modes.records.${category}`) }}</div>
+            <div class="card__header__content__title">{{ $t(`ayim.modes.records.mapsets.${category}`) }}</div>
         </div>
     </div>
 
@@ -16,8 +16,8 @@
             <div v-if="category != 'countArtist'" class="card__body__title">{{ $t('ayim.modes.recordsDetail.title') }}</div>
             <div>{{ $t('ayim.modes.recordsDetail.artist') }}</div>
             <div v-if="category == 'passrate'">{{ $t('ayim.modes.recordsDetail.version') }}</div>
-            <div v-if="category != 'countTitle' && category != 'countArtist'">{{ $t('ayim.modes.records.hostedBy') }}</div>
-            <div class="card__body__value">{{ $t(`ayim.modes.records.${category}`) }}</div>
+            <div v-if="category != 'countTitle' && category != 'countArtist'">{{ $t('ayim.modes.records.mapsets.hostedBy') }}</div>
+            <div class="card__body__value">{{ $t(`ayim.modes.records.mapsets.${category}`) }}</div>
         </div>
     </div>
 

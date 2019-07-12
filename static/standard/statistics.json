@@ -1,0 +1,56 @@
+[
+    
+    {
+        "name": "totalBeatmapsets",
+        "definitions": [
+            {
+                "id": "ranked",
+                "value": 2051
+            },
+            {
+                "id": "loved",
+                "value": 273
+            }
+        ]
+    },
+    {
+        "name": "approachRate",
+        "definitions": [
+            {
+                "id": "ar",
+                "number": 10,
+                "value": 15
+            },
+            {
+                "id": "ar",
+                "number": 1,
+                "value": 8
+            }
+        ]
+    },
+    {
+        "name": "overallDifficulty",
+        "definitions": [
+            {
+                "id": "od",
+                "number": 10,
+                "value": 13
+            }
+        ]
+    },
+    {
+        "name": "hpDrain",
+        "definitions": [
+            {
+                "id": "hp",
+                "number": 0,
+                "value": 5
+            },
+            {
+                "id": "hp",
+                "number": 9,
+                "value": 4
+            }
+        ]
+    }
+]

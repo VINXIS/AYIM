@@ -3,45 +3,22 @@
         "name": "mostRanked",
         "mappers": [
             {
-                "id": 4452992,
-                "username": "Sotarks",
-                "country": "FR",
-                "value": 74
+                "id": 6089608,
+                "username": "Tofu1222",
+                "country": "CN",
+                "value": 36
             },
             {
-                "id": 5364763,
-                "username": "Nao Tomori",
-                "country": "US",
-                "value": 44
+                "id": 2596306,
+                "username": "Kuo Kyoka",
+                "country": "VN",
+                "value": 27
             },
             {
-                "id": 7451883,
-                "username": "Nevo",
-                "country": "US",
-                "value": 37
-            }
-        ]
-    },
-    {
-        "name": "mostFavorite",
-        "mappers": [
-            {
-                "id": 4452992,
-                "username": "Sotarks",
-                "country": "FR",
-                "value": 28013
-            },
-            {
-                "id": 2706438,
-                "username": "Monstrata",
-                "country": "CA",
-                "value": 7544
-            },
-            {
-                "id": 7451883,
-                "username": "Nevo",
-                "country": "US",
-                "value": 7489
+                "id": 2424823,
+                "username": "Janko",
+                "country": "PL",
+                "value": 24
             }
         ]
     },
@@ -49,22 +26,22 @@
         "name": "mostPlayed",
         "mappers": [
             {
-                "id": 4452992,
-                "username": "Sotarks",
-                "country": "FR",
-                "value": 84606615
+                "id": 6089608,
+                "username": "Tofu1222",
+                "country": "CN",
+                "value": 1009494
             },
             {
-                "id": 7451883,
-                "username": "Nevo",
-                "country": "US",
-                "value": 16507980
+                "id": 3734394,
+                "username": "DE-CADE",
+                "country": "ID",
+                "value": 773748
             },
             {
-                "id": 5504231,
-                "username": "Shmiklak",
-                "country": "UZ",
-                "value": 11568573
+                "id": 4610379,
+                "username": "Rivals_7",
+                "country": "ID",
+                "value": 564408
             }
         ]
     }

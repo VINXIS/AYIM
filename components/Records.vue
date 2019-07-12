@@ -2,13 +2,13 @@
 <div>
     <div class="cards-layout" v-if="!isExpanded && categories">
         <div v-for="category in beatmapsByCategory" :key="category.name" class="card">
-            <div class="card__header">
+            <div class="card__header card__header--expandable">
                 <img src="/bar-small.png" alt="">
                 <div class="card__header__content"
                     @click="expand(category)"
                 >
                     <div class="card__header__content__dot"></div>
-                    <div class="card__header__content__title">{{ $t(`ayim.modes.records.${category.name}`) }}</div>
+                    <div class="card__header__content__title">{{ $t(`ayim.modes.records.mapsets.${category.name}`) }}</div>
                 </div>
             </div>
             <div v-if="category.beatmapsets">
@@ -16,7 +16,7 @@
                     <div 
                         v-if="i == 0" 
                         class="card__body" 
-                        :style="`background-image: url('https://assets.ppy.sh/beatmaps/${beatmapset.id}/covers/cover.jpg')`"
+                        :style="getBeatmapBackground(beatmapset.id, category.name)"
                     >
                         <div class="card__body__title">
                             {{ getBeatmapHeader(beatmapset, category.name) }}
@@ -25,7 +25,7 @@
                             {{ beatmapset.artist }}
                         </div>
                         <div class="card__body__host" v-if="beatmapset.creator && category.name != 'countArtist'">
-                            {{ $t('ayim.modes.records.hostedBy') }} <b>{{ beatmapset.creator }}</b>
+                            {{ $t('ayim.modes.records.mapsets.hostedBy') }} <b>{{ beatmapset.creator }}</b>
                         </div>
                         <div class="card__body__value">
                             {{ getBeatmapValue(beatmapset, category.name) }}
@@ -35,7 +35,7 @@
                     <div 
                         v-else
                         class="card__body card__body--small"
-                        :style="`background-image: url('https://assets.ppy.sh/beatmaps/${beatmapset.id}/covers/cover.jpg')`"
+                        :style="getBeatmapBackground(beatmapset.id, category.name)"
                     >
                         <div class="card__body__title">
                             {{ getBeatmapHeader(beatmapset, category.name) }}
@@ -100,6 +100,10 @@ export default {
             else
                 return beatmapsets;
         },
+        getBeatmapBackground: function(beatmapsetId, categoryName) {
+            if (categoryName == 'commonSprite' || categoryName == 'spriteUsage') return;
+            else return `background-image: url('https://assets.ppy.sh/beatmaps/${beatmapsetId}/covers/cover.jpg')`
+        },
         getBeatmapHeader: function(beatmapset, categoryName) {
             if (categoryName == 'countArtist') return beatmapset.artist;
             else if (categoryName == 'maxCombo') return `${beatmapset.title} [${beatmapset.version}]`
@@ -145,65 +149,14 @@ export default {
                     else return b;
                 });
             } else if (category == 'specificFavorites' || category == 'favPC') {
+                category = 'favorites';
                 beatmaps = this.beatmapsets.filter(b => {
                     return b.isModeSpecific;
                 });
-            } else if (category == 'commonSprite') {
-                return [
-                    {
-                        id: 1,
-                        title: '2.png',
-                        commonSprite: '54 mapsets'
-                    },
-                    {
-                        id: 2,
-                        title: '3.png',
-                        commonSprite: '53 mapsets'
-                    },
-                    {
-                        id: 3,
-                        title: '1.png',
-                        commonSprite: '53 mapsets'
-                    },
-                    {
-                        id: 4,
-                        title: '0061.png',
-                        commonSprite: '53 mapsets'
-                    },
-                    {
-                        id: 5,
-                        title: '0074.png',
-                        commonSprite: '51 mapsets'
-                    }
-                ];
-            } else if (category == 'spriteUsage') {
-                return [
-                    {
-                        id: 1,
-                        title: 'particle.png',
-                        spriteUsage: '123,173 times'
-                    },
-                    {
-                        id: 2,
-                        title: 'pixel.png',
-                        spriteUsage: '104,676 times'
-                    },
-                    {
-                        id: 3,
-                        title: 'dot.png',
-                        spriteUsage: '93,836 times'
-                    },
-                    {
-                        id: 4,
-                        title: 'leaf.png',
-                        spriteUsage: '69,309 times'
-                    },
-                    {
-                        id: 5,
-                        title: 'sq.png',
-                        spriteUsage: '28,867 times'
-                    }
-                ];
+            } else if (category == 'commonSprite' || category == 'spriteUsage') {
+                return this.beatmapsets.filter(b => {
+                    return b[category];
+                });
             } else {
                 beatmaps = this.beatmapsets;
             }
