@@ -1,13 +1,12 @@
 <template>
-    <div class="indexinfo">
-        <div>
-            <div class="title">
-                <div class="bold">{{ $t('ayim.index.homeTitle') }}</div>
-                <img src="../CorsaceAssets/img/divider.png">
-            </div>
-            <p class="indexParagraph" v-html="$t('ayim.index.home')"/>
+    <div>
+        <div class="title">
+            <div class="bold">{{ $t('ayim.index.homeTitle') }}</div>
+            <img src="../CorsaceAssets/img/divider.png">
         </div>
-        <img class="prettyimg" src="../CorsaceAssets/img/ayim-mca/pic.png">
+        <p class="indexParagraph">
+            <b>{{ $t('ayim.index.home') }}</b> lol <br>
+        </p>
     </div>
 </template>
 

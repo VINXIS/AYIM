@@ -2,11 +2,11 @@
     <div class="template-wrap">
         <div class="header">
             <nuxt-link to="/" class="header-left">
-                <img class="ayim" src="../CorsaceAssets/img/ayim-mca/ayim.png">
+                <img class="ayim" src="../CorsaceAssets/img/ayim.png">
             </nuxt-link>
             <div class="countdown">
                 <div>{{ $t('ayim.layout.mca2018') }}</div>
-                <Countdown></Countdown>
+                <Countdown deadline="2020-12-25 00:00:00"></Countdown>
                 <div>{{ $t('ayim.layout.days') }}</div>
             </div>
             <div class="header-right" 
@@ -14,8 +14,8 @@
             @mouseout="mcaHover=false"
             :class="{headerHover: mcaHover}"
             >
-                <img :class="{mcalogoHover: mcaHover}" src="../CorsaceAssets/img/ayim-mca/mca.png">
-                <img :class="{mcalogoHover: mcaHover}" class="mcalogo" src="../CorsaceAssets/img/ayim-mca/triangle.png">
+                <img :class="{mcalogoHover: mcaHover}" src="../CorsaceAssets/img/mca.png">
+                <img :class="{mcalogoHover: mcaHover}" class="mcalogo" src="../CorsaceAssets/img/triangle.png">
             </div>
         </div>
         <ModeNavigation/>
@@ -28,13 +28,13 @@
                 </a>
                 <div class="extLinks">
                     <a href="https://twitter.com/corsace_">
-                        <img src="../CorsaceAssets/img/social/twitter.png">
+                        <img src="../CorsaceAssets/img/twitter.png">
                     </a>
                     <a href="https://discord.gg/Z6vEMsr">
-                        <img src="../CorsaceAssets/img/social/discord.png">
+                        <img src="../CorsaceAssets/img/discord.png">
                     </a>
                     <a href="https://www.twitch.tv/corsace">
-                        <img src="../CorsaceAssets/img/social/twitch.png">
+                        <img src="../CorsaceAssets/img/twitch.png">
                     </a>
                 </div>
             </div>

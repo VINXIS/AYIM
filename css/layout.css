@@ -3,7 +3,7 @@
 body {
     margin: 0;
     margin-top: 1.6%;
-    background: url(../CorsaceAssets/img/ayim-mca/background.png);
+    background: url(../CorsaceAssets/img/background.png);
     background-color: #141414;
     background-repeat: no-repeat;
     background-position: center;
@@ -19,10 +19,10 @@ img {
 .template-wrap {
     display: grid;
     grid-template-areas: 
-        "header header"
-        "nav nuxt"
-        "footer footer";
-    grid-template-columns: 12vw 88vw;
+        "header header header"
+        "nav nuxt nuxt"
+        "footer footer footer";
+    grid-template-columns: 15.21vw 1fr;
 }
 
 .header {
@@ -31,7 +31,6 @@ img {
     display: flex;
     flex-direction: row;
     overflow: hidden;
-    width: 100%;
 }
 
 .header-left {
@@ -50,14 +49,11 @@ img {
     font-weight: lighter;
     text-align: right;
     align-self: center;
-    display: flex;
-    justify-content: right;
     flex-direction: column;
     padding: 0 26px;
     font-size: calc(1vw + 3.25px);
     white-space: nowrap;
     margin-left: auto;
-    line-height: 200%;
 }
 
 .header-right {
@@ -92,10 +88,9 @@ img {
 
 .nuxt {
     grid-area: nuxt;
-    margin-top: calc(6vh + 6px);
+    margin-top: 12vh;
     position: static;
     z-index: 0;
-    padding-left: 5px;
 }
 
 .footer {
@@ -113,7 +108,7 @@ img {
 }
 
 .footer-left {
-    padding: calc(1vh + 6px) 23px;
+    padding: 24px 23px;
     display: flex;
 }
 
@@ -142,7 +137,6 @@ img {
     display: flex;
     align-items: center;
     text-align: right;
-    padding-right: 3px;
 }
 
 @media only screen and (min-width: 1920px) { /* To not break stuff at 2K 4K etc */

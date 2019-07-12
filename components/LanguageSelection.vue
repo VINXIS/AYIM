@@ -28,6 +28,9 @@ export default{
             localStorage.setItem('lang', lang);
         },
     },
+    created() {
+        console.log(this.$i18n.locale.toUpperCase())
+    },
     computed: {
         langs () {
             return Object.keys(this.$i18n.messages)
@@ -46,14 +49,10 @@ export default{
 
 .languageSelection img {
     width: 1.8vw;
-    margin-right: 0.55vw;
-    border: 2px solid #2a2a2a;
-    border-radius: 7px;
+    padding-right: 0.55vw;
 }
 
 .dropdown {
-    border-top-left-radius: 8px;
-    padding-top: calc(0.4vw + 3px);
     position: absolute;
     bottom: 100%;
     right: 0;
@@ -61,24 +60,16 @@ export default{
 }
 
 .langSelDropdown {
-    padding: 0.45vw calc(0.65vw + 4px);
+    padding: 0.65vw calc(0.65vw + 4px);
     display: flex;
     align-items: center;
     color: white;
     transition: 0.2s ease;
 }
 
-.langSelDropdown img {
-    border: 2px solid white;
-}
-
 .langSelDropdown:hover {
     color: #ff890a;
     background-color: white;
     transition: 0.2s ease;
-}
-
-.langSelDropdown:hover img{
-    border: 2px solid black;
 }
 </style>
