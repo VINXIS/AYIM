@@ -11,13 +11,26 @@
 }
 
 .title .bold {
-    font-size: calc(1.5vw + 6px);
+    font-size: calc(1.75vw + 6px);
 }
 
 .bold {
     font-weight: bold;
 }
 
+.indexinfo {
+    display: flex;
+    height: 75%;
+}
+
 .indexParagraph {
     margin-left: 0.5vw;
+    font-size: calc(1vw + 6px);
+    width: 50vw;
+    padding-right: 1vw;
+}
+
+.prettyimg {
+    width: 35%;
+    height: 30vw;
 }

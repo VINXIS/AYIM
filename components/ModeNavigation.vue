@@ -17,13 +17,13 @@
             </div>  
         </nuxt-link>
         <nuxt-link to="/mania" class="nav-mode" :class="{ navActiveText: mania, mania: !mania }">
-            <img v-if="mania" src="../CorsaceAssets/img/mania-active.png">
-            <img v-else src="../CorsaceAssets/img/mania.png">
+            <img v-if="mania" src="../CorsaceAssets/img/modes/mania-active.png">
+            <img v-else src="../CorsaceAssets/img/modes/mania.png">
             <div>{{ $t('ayim.layout.nav.mania') }}</div>
         </nuxt-link>
         <nuxt-link to="/storyboard" class="nav-mode" :class="{ navActiveText: storyboard, storyboard: !storyboard }">
-            <img v-if="storyboard" src="../CorsaceAssets/img/storyboard-active.png">
-            <img v-else src="../CorsaceAssets/img/storyboard.png">
+            <img v-if="storyboard" src="../CorsaceAssets/img/modes/storyboard-active.png">
+            <img v-else src="../CorsaceAssets/img/modes/storyboard.png">
             <div>{{ $t('ayim.layout.nav.storyboard') }}</div>
         </nuxt-link>
     </div>
