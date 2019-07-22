@@ -5,7 +5,6 @@
             :mode="$route.params.mode"
         ></options-menu>
         <records
-            :menu="'beatmapsets'"
             :mode="$route.params.mode"
         ></records>
     </div>

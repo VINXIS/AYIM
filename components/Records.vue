@@ -1,6 +1,7 @@
 <template>
 <div>
-    <div class="cards-layout" v-if="!isExpanded && categories">
+    <loading v-if="isLoading" style="margin-top: 150px;"></loading>
+    <transition-group appear name="list" tag="div" class="cards-layout"  v-if="!isLoading && !isExpanded && categories">
         <div v-for="category in beatmapsByCategory" :key="category.name" class="card">
             <div class="card__header card__header--expandable">
                 <img src="/bar-small.png" alt="">
@@ -47,7 +48,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </transition-group>
     <records-expanded
         v-else-if="isExpanded"
         :is-expanded.sync="isExpanded"
@@ -59,10 +60,12 @@
 
 <script>
 import axios from 'axios';
+import Loading from '~/Components/Loading';
 import RecordsExpanded from '~/Components/RecordsExpanded';
 
 export default {
     components: {
+        Loading,
         RecordsExpanded,
     },
     props: {
@@ -76,6 +79,7 @@ export default {
             beatmapsets: null,
             beatmaps: [],
             selectedBeatmapsets: null,
+            isLoading: true,
         }
     },
     computed: {
@@ -178,6 +182,8 @@ export default {
             this.categories = (await axios.get(`/${this.mode}/categories_beatmapsets.json`)).data;
             this.beatmapsets = (await axios.get(`/${this.mode}/beatmapsets.json`)).data;
             if (this.mode != 'storyboard') this.beatmaps = (await axios.get(`/${this.mode}/beatmaps.json`)).data;
+
+            this.isLoading = false;
         } catch (error) {
             console.log(error);
         }

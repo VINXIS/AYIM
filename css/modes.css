@@ -108,3 +108,18 @@
     padding-top: 0px;
     margin-top: 0px;
 }
+
+.list-enter-active,
+.list-leave-active,
+.list-move {
+    transition: all 0.8s;
+}
+
+.list-leave-active {
+    position: absolute;
+}
+
+.list-enter,
+.list-leave-to {
+    opacity: 0;
+}

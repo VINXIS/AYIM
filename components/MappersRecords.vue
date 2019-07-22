@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="cards-layout" v-if="categories">
+    <transition-group appear="" name="list" class="cards-layout" v-if="!isLoading && categories">
         <div v-for="category in categories" :key="category.name" class="card">
             <div class="card__header">
                 <img src="/bar-small.png" alt="">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </transition-group>
 </div>
 </template>
 
