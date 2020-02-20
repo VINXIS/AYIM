@@ -8,7 +8,7 @@
             v-for="comment in comments"
             :key="comment.ID"
         >
-            {{ comment.ID }} - {{ comment.commenter.osu.username }} - {{ comment.target.osu.username }} - {{ comment.mode }} - {{ comment.isValid }}
+            {{ comment.ID }} - {{ comment.commenter.osu.username }} - {{ comment.target.osu.username }} - {{ comment.mode.name }} 
             <input 
                 v-model="comment.comment"
                 type="text"

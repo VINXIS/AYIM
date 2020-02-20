@@ -1,7 +1,18 @@
 import Router from 'koa-router';
 import { isLoggedIn } from '../../../CorsaceServer/middleware';
-import { UserComment, ModeDivision } from '../../../CorsaceModels/MCA_AYIM/userComments';
 import { User } from '../../../CorsaceModels/user';
+import { UserComment } from '../../../CorsaceModels/MCA_AYIM/userComments';
+import { ModeDivision, ModeDivisionType } from '../../../CorsaceModels/MCA_AYIM/modeDivision';
+
+async function canComment(ctx, next): Promise<any> {
+    if (!ctx.state.user.canComment) {
+        return ctx.body = {
+            error: 'You cannot comment',
+        }
+    }
+    
+    await next();
+}
 
 async function isOwnerComment(ctx, next): Promise<any> {
     const comment = await UserComment.findOneOrFail(ctx.params.id);
@@ -18,27 +29,39 @@ async function isOwnerComment(ctx, next): Promise<any> {
 
 const commentsRouter = new Router();
 
-commentsRouter.get('/', isLoggedIn, async (ctx) => {
-    const comments = await UserComment.find({
-        where: {
-            commenter: ctx.state.user,
-        },
-        relations: ['target'],
-    });
+commentsRouter.get('/', isLoggedIn, canComment, async (ctx) => {
+    const [comments, modes] = await Promise.all([
+        UserComment.find({
+            where: {
+                commenter: ctx.state.user,
+            },
+            relations: ['target'],
+        }),
+        ModeDivision.find({}),
+    ]);
 
     ctx.body = {
         comments,
+        modes,
         user: ctx.state.user,
     };
 });
 
-commentsRouter.post('/create', isLoggedIn, async (ctx) => {
+commentsRouter.post('/create', isLoggedIn, canComment, async (ctx) => {
     const newComment: string = ctx.request.body.comment.trim();
-    const modeKey: keyof typeof ModeDivision = ctx.request.body.mode;
+    const mode: string = ctx.request.body.mode;
     
-    if (!newComment || !modeKey) {
+    if (!newComment || !mode) {
         return ctx.body = {
             error: 'Missing data',
+        }
+    }
+
+    const modeID = parseInt(mode, 10);
+
+    if (isNaN(modeID)) {
+        return ctx.body = {
+            error: 'Not a valid mode',
         }
     }
 
@@ -56,10 +79,9 @@ commentsRouter.post('/create', isLoggedIn, async (ctx) => {
         }
     }
     
-    const mode = ModeDivision[modeKey];
     const hasCommented = await UserComment.findOne({
         target,
-        mode,
+        modeID,
     });
 
     if (hasCommented) {
@@ -71,24 +93,24 @@ commentsRouter.post('/create', isLoggedIn, async (ctx) => {
     const currentYear = new Date().getFullYear();
     let isModeEligible = false;
 
-    switch (mode) {
-        case ModeDivision['standard']:
+    switch (modeID) {
+        case ModeDivisionType.Standard:
             isModeEligible = target.mca.some(e => e.standard && e.year == currentYear);
             break;
 
-        case ModeDivision['mania']:
+        case ModeDivisionType.Mania:
             isModeEligible = target.mca.some(e => e.mania && e.year == currentYear);
             break;
             
-        case ModeDivision['taiko']:
+        case ModeDivisionType.Taiko:
             isModeEligible = target.mca.some(e => e.taiko && e.year == currentYear);
             break;
             
-        case ModeDivision['fruits']:
+        case ModeDivisionType.Fruits:
             isModeEligible = target.mca.some(e => e.fruits && e.year == currentYear);
             break;
 
-        case ModeDivision['storyboard']:
+        case ModeDivisionType.Storyboard:
             isModeEligible = target.mca.some(e => e.storyboard && e.year == currentYear);
             break;
     }
@@ -100,7 +122,7 @@ commentsRouter.post('/create', isLoggedIn, async (ctx) => {
     }
 
     const comment = new UserComment();
-    comment.mode = mode;
+    comment.modeID = modeID;
     comment.comment = newComment;
     comment.commenter = ctx.state.user;
     comment.target = target;
@@ -110,7 +132,7 @@ commentsRouter.post('/create', isLoggedIn, async (ctx) => {
     ctx.body = comment;
 });
 
-commentsRouter.post('/:id/update', isLoggedIn, isOwnerComment, async (ctx) => {
+commentsRouter.post('/:id/update', isLoggedIn, canComment, isOwnerComment, async (ctx) => {
     const newComment: string = ctx.request.body.comment.trim();
 
     if (!newComment) {
@@ -126,7 +148,7 @@ commentsRouter.post('/:id/update', isLoggedIn, isOwnerComment, async (ctx) => {
     ctx.body = comment;
 });
 
-commentsRouter.post('/:id/remove', isLoggedIn, isOwnerComment, async (ctx) => {
+commentsRouter.post('/:id/remove', isLoggedIn, canComment, isOwnerComment, async (ctx) => {
     await ctx.state.comment.remove();
 
     ctx.body = {

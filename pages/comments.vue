@@ -16,20 +16,12 @@
         </div>
 
         <select v-model="newMode">
-            <option value="standard">
-                standard
-            </option>
-            <option value="taiko">
-                taiko
-            </option>
-            <option value="mania">
-                mania
-            </option>
-            <option value="fruits">
-                ctb
-            </option>
-            <option value="storyboard">
-                storyboard
+            <option 
+                v-for="mode in modes" 
+                :key="mode.ID" 
+                :value="mode.ID"
+            >
+                {{ mode.name }}
             </option>
         </select>
         
@@ -43,7 +35,7 @@
             v-for="comment in comments"
             :key="comment.ID"
         >
-            {{ comment.ID }} - {{ comment.target.osu.username }} - {{ comment.mode }}
+            {{ comment.ID }} - {{ comment.target.osu.username }} - {{ comment.mode.name }}
             <input 
                 v-model="comment.comment"
                 type="text"
@@ -70,18 +62,22 @@ export default Vue.extend({
     data () {
         return {
             comments: [],
+            modes: [],
             user: null,
             newTarget: '',
             newComment: '',
-            newMode: 'standard',
+            newMode: 1,
             info: '',
         }
     },
     async mounted () {
         const res = await Axios.get('/api/comments/');
 
-        if (res.data && !res.data.error) {
+        if (res.data.error) {
+            this.info = res.data.error;
+        } else if (res.data) {
             this.comments = res.data.comments;
+            this.modes = res.data.modes;
             this.user = res.data.user;
         }
     },
