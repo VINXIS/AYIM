@@ -49,19 +49,11 @@ commentsRouter.get('/', isLoggedIn, canComment, async (ctx) => {
 
 commentsRouter.post('/create', isLoggedIn, canComment, async (ctx) => {
     const newComment: string = ctx.request.body.comment.trim();
-    const mode: string = ctx.request.body.mode;
+    const modeInput: string = ctx.request.body.mode;
     
-    if (!newComment || !mode) {
+    if (!newComment || !modeInput) {
         return ctx.body = {
             error: 'Missing data',
-        }
-    }
-
-    const modeID = parseInt(mode, 10);
-
-    if (isNaN(modeID)) {
-        return ctx.body = {
-            error: 'Not a valid mode',
         }
     }
 
@@ -71,17 +63,29 @@ commentsRouter.post('/create', isLoggedIn, canComment, async (ctx) => {
         }
     }
 
-    const target = await User.findOne(ctx.request.body.target);
+    const modeID = parseInt(modeInput, 10);
+
+    if (isNaN(modeID)) {
+        return ctx.body = {
+            error: 'Not a valid mode',
+        }
+    }
+
+    const [mode, target] = await Promise.all([
+        ModeDivision.findOne(modeID),
+        await User.findOne(ctx.request.body.target),
+    ]);
 
     if (!target) {
         return ctx.body = {
             error: 'User not found',
         }
     }
-    
+
     const hasCommented = await UserComment.findOne({
+        commenter: ctx.state.user,
         target,
-        modeID,
+        mode,
     });
 
     if (hasCommented) {
@@ -122,7 +126,7 @@ commentsRouter.post('/create', isLoggedIn, canComment, async (ctx) => {
     }
 
     const comment = new UserComment();
-    comment.modeID = modeID;
+    comment.mode = mode;
     comment.comment = newComment;
     comment.commenter = ctx.state.user;
     comment.target = target;

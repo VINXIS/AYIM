@@ -1,11 +1,10 @@
 import Router from 'koa-router';
-import { isLoggedIn } from '../../../../CorsaceServer/middleware';
+import { isLoggedIn, hasRole } from '../../../../CorsaceServer/middleware';
 import { UserComment } from '../../../../CorsaceModels/MCA_AYIM/userComments';
-import { isMcaStaff } from '../../../api/middleware';
 
 const commentsReviewRouter = new Router();
 
-commentsReviewRouter.get('/', isLoggedIn, isMcaStaff, async (ctx) => {
+commentsReviewRouter.get('/', isLoggedIn, hasRole('mca', 'staff'), async (ctx) => {
     const comments = await UserComment.find({
         relations: ['target', 'reviewer', 'commenter'],
     });
@@ -16,17 +15,18 @@ commentsReviewRouter.get('/', isLoggedIn, isMcaStaff, async (ctx) => {
     };
 });
 
-commentsReviewRouter.post('/:id/review', isLoggedIn, isMcaStaff, async (ctx) => {
+commentsReviewRouter.post('/:id/review', isLoggedIn, hasRole('mca', 'staff'), async (ctx) => {
     const comment = await UserComment.findOneOrFail(ctx.params.id);
     comment.comment = ctx.request.body.comment.trim();
     comment.isValid = ctx.request.body.isValid;
     comment.reviewer = ctx.state.user;
+    comment.lastReviewedAt = new Date();
     await comment.save();
 
     ctx.body = comment;
 });
 
-commentsReviewRouter.post('/:id/remove', isLoggedIn, isMcaStaff, async (ctx) => {
+commentsReviewRouter.post('/:id/remove', isLoggedIn, hasRole('mca', 'staff'), async (ctx) => {
     const comment = await UserComment.findOneOrFail(ctx.params.id);
     await comment.remove();
 
