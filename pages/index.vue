@@ -37,10 +37,10 @@ export default {
             if (!data.error) {
                 this.user = data.user;
             } else {
-                console.log(data.error);
+                console.error(data.error);
             }
         } catch (err) {
-            console.log(err);
+            console.error(err);
         }
     },
     methods: {
