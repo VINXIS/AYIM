@@ -87,7 +87,7 @@ export default {
     },
     computed:  {
         avatarURL: function ()  {
-            return this.user && this.user.osu ? this.user.osu.avatar + "?" + Math.round(Math.random()*1000000) : "";
+            return this.user && this.user.osu ? this.user.osu.avatar : "";
         },
     },
     mounted: function () {

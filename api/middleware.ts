@@ -54,23 +54,23 @@ function isEligibleFor(user, modeID): boolean {
             let isModeEligible = false;
 
             switch (modeID) {
-                case ModeDivisionType.Standard:
+                case ModeDivisionType.standard:
                     isModeEligible = user.mcaEligibility.some(e => e.standard && e.year == currentYear);
                     break;
 
-                case ModeDivisionType.Mania:
+                case ModeDivisionType.mania:
                     isModeEligible = user.mcaEligibility.some(e => e.mania && e.year == currentYear);
                     break;
             
-                case ModeDivisionType.Taiko:
+                case ModeDivisionType.taiko:
                     isModeEligible = user.mcaEligibility.some(e => e.taiko && e.year == currentYear);
                     break;
             
-                case ModeDivisionType.Fruits:
+                case ModeDivisionType.fruits:
                     isModeEligible = user.mcaEligibility.some(e => e.fruits && e.year == currentYear);
                     break;
 
-                case ModeDivisionType.Storyboard:
+                case ModeDivisionType.storyboard:
                     isModeEligible = user.mcaEligibility.some(e => e.storyboard && e.year == currentYear);
                     break;
             }
